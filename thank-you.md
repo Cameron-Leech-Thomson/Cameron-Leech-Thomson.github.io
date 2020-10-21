@@ -3,6 +3,6 @@ layout: page
 title: Thank you for your correspondence
 ---
 ## Thank you for your correspondence
-We are delighted to hear from you. You may expect to receive an answer soon.
+I'm really glad to hear from you. I'll try to get back to you as soon as I can!
 
-Have a nice day!
+Have a lovely day!
