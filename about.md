@@ -9,7 +9,7 @@ sitemap:
 ---
 ## About Me
 
-<span class="image left"><img src="{{ "/images/pic04.jpg" | absolute_url }}" alt="" /></span>
+<span class="image left"><img src="{{ "/images/me.jpg" | absolute_url }}" alt="" /></span>
 
 Hi! I'm Cameron, I'm a 19 year old, 2nd year Computer Science student at The University of Sheffield. I've created this website as a portfolio to show the projects that I make, whether they're University work or just for my own amusement. This way I can have all my projects in one place for everyone to see! If you want to take a more in-depth look at my projects, the blog posts about them will come with a link to their GitHub repository. If you want to have a look over all of them, take a look at my GitHub page [here](https://github.com/Cameron-Leech-Thomson)!
 Usually, I'll post when a new project is uploaded. However, if I find something particularly interesting while doing a project, that topic might get its own blog post. I hope you enjoy!
