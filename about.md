@@ -1,13 +1,13 @@
 ---
 layout: page
-title: About ME
+title: About Me
 description: A little description about me and this site!
 sitemap:
     priority: 0.7
     lastmod: 2017-11-02
     changefreq: weekly
 ---
-## About our Site
+## About Me
 
 <span class="image left"><img src="{{ "/images/pic04.jpg" | absolute_url }}" alt="" /></span>
 
