@@ -17,7 +17,7 @@ As well as using Git to keep track of my projects, their progress and results wi
 ### Blog Posts
 I'll normally be posting on the blog every time I finish a new project. I'll talk about the process of creating the project, as well as how the final result works. I'll try to keep it short but I have a problem with waffling. In these posts, I'll talk about how I decided on each part of the process and why I think it's better than an alternative. If you'd like to tell me why I'm wrong, feel free to do so with the message board in the footer! As well as the project posts, I may post about specific parts of a project in more detail, for example, if I am particularly proud of a certain part of the code, or if it was a pain to get to work.
 
-### Finally
+## Finally
 This project was helped greatly by my good friend and fellow Computer Science extraordinaire [Casey Henderson](https://caseyhenderson.github.io). If you'd like to see what he gets up to, you can find his own website [here](https://caseyhenderson.github.io)! He recently released a new app on the app store, documenting the stadiums of teams across all 4 leagues of English football, and you can find it on the [apple store here](https://apps.apple.com/gb/app/stadiums/id1522026145). 
 
 Thanks for visiting!
