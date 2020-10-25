@@ -11,7 +11,7 @@ description: A list of my skills in different languages.
 - [A-Level Chemistry Revision](https://github.com/Cameron-Leech-Thomson/A-Level-Chem_Resource) (2018) - Proof of concept of an AS/A-Level Chemistry Revision resource. Built using C# and the Unity UI engine. Contained various pages, including textbook-style pages on topics, with randomly generated questions on various topics, match-up games, and definition quizzes. Made as A-Level Computer Science coursework.
 
 ## Java
-- [Card Games](https://github.com/Cameron-Leech-Thomson/card_games) (2020) - A small project I undertook to create a few card games that I enjoyed in Java. Rummy (up to 4 players), Poker (up to 4 players), Solitaire. Extra files are in the repository as I began to change all of the games into object-oriented, but eventually lost interest so this feature is lacking.
+- [Card Games](https://github.com/Cameron-Leech-Thomson/card_games) (2020) - A small project I undertook to create text-based versions of a few card games that I enjoyed in Java. Rummy (up to 4 players), Poker (up to 4 players), Solitaire. Extra files are in the repository as I began to change all of the games into object-oriented, but eventually lost interest so this feature is lacking.
 
 ## Python
 - A series of small, basic projects (~2015) - Projects undertaken by myself to start learning to code. Began with C#, but quickly switched to Python. Most of these projects have been lost and those that remain are too basic to be worth uploading - like I said, it was when I first started coding.
