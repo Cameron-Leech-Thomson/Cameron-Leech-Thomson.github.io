@@ -9,7 +9,7 @@ credit: "https://pages.github.com/"
 ---
 
 ## This Site
-This site was created for free by me, with the use of [GitHub Pages](https://pages.github.com/). GitHub Pages is GitHub's hosting platform, allowing you to create sites for yourself or for an individual repository. It's really easy to set up, and you can find out how [here](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages). Pages allows you to choose from a few pre-set themes that give your site a little more flair, or you could go and find a custom one that suits you, or go ahead and make one yourself! The custom theme that I'm using is called Massively, and you can find out more about it [here](https://github.com/jekyllup/jekyll-theme-massively). All of the themes use [Jekyll](https://jekyllrb.com/) - a static site generator. You can use it to style your site using different layouts and pages, which you create in languages like HTML, CSS, & JavaScript, and add content by using mark-up languages.
+This site was created for free by me, with the use of [GitHub Pages](https://pages.github.com/). GitHub Pages is GitHub's hosting platform, allowing you to create sites for yourself or for an individual repository. It's really easy to set up, and you can find out how [here](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages). Pages allows you to choose from a few pre-set themes that give your site a little more flair, or you could go and find a custom one that suits you, or go ahead and make one yourself! The custom theme that I'm using is called Massively, and you can find out more about it [here](https://github.com/jekyllup/jekyll-theme-massively). All of the themes use [Jekyll](https://jekyllrb.com/) - a static site generator. You can use it to style your site using different layouts and pages, which you'd create in languages like HTML, CSS, & JavaScript, and add content with mark-up languages.
 
 ### Content
 Content for each page is inside of a file containing a mark-up language. For example, I'm using markdown (.md) files. In each file, you must specify the attributes that will be used in the layout file. For example, in the [previous post](https://cameron-leech-thomson.github.io/blog/welcome-to-my-site/) I put up, the attributes look like this:
@@ -24,7 +24,7 @@ Content for each page is inside of a file containing a mark-up language. For exa
     credit: "https://unsplash.com/photos/OqtafYT5kTw?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
     ---
 ```
-The attributes here are accessed in a HTML file, and then used to fill the slots for various pieces of content. The main bulk of writing done in a post is done after the `- - -`.
+The attributes here are accessed in a HTML file, and then used to fill the slots for various pieces of content. The main bulk of writing done in a post is done after the `---`.
 
 ### Layouts
 Each layout is just a HTML file, that creates the setting for the content. However the actual content is not in the HTML, but a mark-up file. To get the content from the mark-up files, you'd access it like this:  
@@ -40,7 +40,7 @@ Which you're trying to put in the main header for your page. You'd set the HTML 
     </header>
 ```
 {% endraw %}
-In this instance, the call{% raw %} "{{page.title}}" {% endraw %}is where you retrieve the title of the page itself. You'd also preface any attribute you're after with `page.` then the name of the attribute. HTML takes in the string and runs it essentially like it would if you were to write it there normally. For example, if you wanted to embed a URL, you'd do it like this:
+In this instance, the call{% raw %} `{{page.title}}` {% endraw %}is where you retrieve the title of the page itself. You'd also preface any attribute you're after with `page.` then the name of the attribute. HTML takes in the string and runs it like you wrote it there in the first place. For example, if you wanted to embed a URL, you'd do it like this:
 {% raw %}
 ```html
     <a href = "{{page.url}}">Click Here!</a>
