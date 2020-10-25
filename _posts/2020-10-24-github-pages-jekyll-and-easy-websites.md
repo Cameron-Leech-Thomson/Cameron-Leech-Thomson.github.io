@@ -49,6 +49,6 @@ In this instance, the call{% raw %} `{{page.title}}` {% endraw %}is where you re
 Images references would work in exactly the same way too.
 
 ## Learn More
-If you'd like to learn more about Jekyll, you can [click here](https://jekyllrb.com/) to be taken to the Jekyll website. If you'd like to learn more about GitHub pages, you can [click here](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages) to be taken to the Pages documentation. If you'd like to find out more about markdown - the language I use for the site's content, you can find out [here](https://www.markdownguide.org/). I'd recommend having a play with it, even if you don't have a reason for a website. It's just good fun, and it's free!
+If you'd like to learn more about Jekyll, you can [click here](https://jekyllrb.com/) to be taken to the Jekyll website. If you'd like to learn more about GitHub pages, you can [click here](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages) to be taken to the Pages documentation. If you'd like to find out more about markdown - the language I use for the site's content, you can find out [here](https://www.markdownguide.org/). You can also find GitHub user [adam-p](https://github.com/adam-p)'s Markdown cheat sheet [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). I'd recommend having a play with it, even if you don't have a reason for a website. It's just good fun, and it's free!
 
 Have a nice day!
