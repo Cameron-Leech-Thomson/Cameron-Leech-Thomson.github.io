@@ -33,19 +33,19 @@ Say you're after the markdown attribute 'title' in:
     title: "Post Title"
 ```
 Which you're trying to put in the main header for your page. You'd set the HTML up like this:
+{% raw %}
 ```html
     <header>
-    <!-- {% raw %} -->
         <h1 class = "title">{{page.title}}</h1>
-    <!-- {% endraw %} -->
     </header>
 ```
+{% endraw %}
 In this instance, the call "{{page.title}}" is where you retrieve the title of the page itself. You'd also preface any attribute you're after with "page." then the name of the attribute. HTML takes in the string and runs it essentially like it would if you were to write it there normally. For example, if you wanted to embed a URL, you'd do it like this:
+{% raw %}
 ```html
-<!-- {% raw %} -->
     <a href = "{{page.url}}">Click Here!</a>
-<!-- {% endraw %} -->
 ```
+{% endraw %}
 Images would work in exactly the same way too.
 
 ## Learn More
