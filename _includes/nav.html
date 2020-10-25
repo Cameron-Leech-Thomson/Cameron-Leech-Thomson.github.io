@@ -2,8 +2,10 @@
   <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Home</a></li>
   <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}">About</a></li>
   <li class="{% if page.url contains '/blog/' %} active {% endif %}"><a href="{{ "/blog/" | absolute_url }}">Projects</a></li>
-  <li class="{% if page.url contains '/in-development/' %} active {% endif %}"><a href="{{ "/in-development/" | absolute_url }}">Skills</a></li>
+  <li class="{% if page.url contains '/skills/' %} active {% endif %}"><a href="{{ "/skills/" | absolute_url }}">Skills</a></li>
 </ul>
+
+<!-- in-development -->
 
 <ul class="icons">
         <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
