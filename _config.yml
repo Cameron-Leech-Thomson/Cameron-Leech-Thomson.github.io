@@ -57,6 +57,10 @@ gems:
   - jekyll-paginate
   - jekyll-age
 
+# Plugins
+plugins:
+  - jekyll-age
+
 paginate: 6
 paginate_path: "/blog/page:num/"
 
