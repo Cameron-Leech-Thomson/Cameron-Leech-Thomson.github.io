@@ -29,6 +29,8 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-age (0.1.6)
+      jekyll (>= 3.0, < 5.0)
     jekyll-feed (0.7.2)
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
@@ -84,6 +86,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.2.1)
+  jekyll-age
   jekyll-feed
   jekyll-gist
   jekyll-mentions
@@ -91,4 +94,4 @@ DEPENDENCIES
   jekyll-sitemap
 
 BUNDLED WITH
-   1.17.2
+   2.1.4
