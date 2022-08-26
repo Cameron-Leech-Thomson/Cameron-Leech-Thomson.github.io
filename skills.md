@@ -14,7 +14,7 @@ description: A list of my skills in different languages.
 ## C & Arduino
 - [Over-The-Air Instructions to an Adafruit Robot Car](https://gitlab.com/acc19cl/com3505-student-2022/-/tree/main/LA2) (2022) - A robot car that will connect to the internet to download instructions from a local Python server. The user can update the instructions and the car will detect this and carry them out. The user can issue commands in the format:
 
-`LEFTMOTOR-SPEED RIGHTMOTOR-SPEED DURATION(sec)`.
+```LEFTMOTOR-SPEED RIGHTMOTOR-SPEED DURATION(sec)```
 
 ## Java & Kotlin
 - [Card Games](https://github.com/Cameron-Leech-Thomson/card_games) (2020) - A small project I undertook to create text-based versions of a few card games that I enjoyed in Java. Rummy (up to 4 players), Poker (up to 4 players), Solitaire. Extra files are in the repository as I began to change all of the games into object-oriented, but eventually lost interest so this feature is lacking.
