@@ -12,9 +12,7 @@ description: A list of my skills in different languages.
 - [VR Simulation of Special Relativity with Puzzles](https://github.com/Cameron-Leech-Thomson/dissertation-project) (2022) - My undergratuate dissertation project. A simulation of the effects of special relativity, and woulc change the way we perceive the world if we were moving at a substancial fraction of the speed of light. The game uses the effects to create a short series of puzzles over three levels, guiding the user in the ways that the effects can be used, as well as a basic sandbox area so that the user can explore more freely.
 
 ## C & Arduino
-- [Over-The-Air Instructions to an Adafruit Robot Car](https://gitlab.com/acc19cl/com3505-student-2022/-/tree/main/LA2) (2022) - A robot car that will connect to the internet to download instructions from a local Python server. The user can update the instructions and the car will detect this and carry them out. The user can issue commands in the format:
-
-```LEFTMOTOR-SPEED RIGHTMOTOR-SPEED DURATION(sec)```
+- [Over-The-Air Instructions to an Adafruit Robot Car](https://gitlab.com/acc19cl/com3505-student-2022/-/tree/main/LA2) (2022) - A robot car that will connect to the internet to download instructions from a local Python server. The user can update the instructions and the car will detect this and carry them out. The user can issue commands in the format *"LEFTMOTOR-SPEED RIGHTMOTOR-SPEED DURATION(sec)"*.
 
 ## Java & Kotlin
 - [Card Games](https://github.com/Cameron-Leech-Thomson/card_games) (2020) - A small project I undertook to create text-based versions of a few card games that I enjoyed in Java. Rummy (up to 4 players), Poker (up to 4 players), Solitaire. Extra files are in the repository as I began to change all of the games into object-oriented, but eventually lost interest so this feature is lacking.
