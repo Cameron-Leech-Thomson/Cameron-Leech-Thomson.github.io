@@ -31,7 +31,12 @@
 
 					<!-- Post -->
 					<section class="post">
-						<embed src="{{page.file_url}}" style="width:100%;height:1200px;" type="application/pdf"/>
+                        
+                        <p>{{content}}</p>
+
+						<embed src="{{page.file_url}}" style="width:100%;height:900px" type="application/pdf"/>
+
+                        <a href="{{page.file_url}}" download="{{page.file_name}}" class="button">Download</a>
 					</section>
 
 					<!-- Footer -->
