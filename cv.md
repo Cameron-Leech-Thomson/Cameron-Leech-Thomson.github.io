@@ -4,4 +4,6 @@ title: Cirriculum Vitae
 description: CV for Cameron Leech-Thomson
 ---
 
-hi
+<div>
+    <iframe src="images\Cameron Leech-Thomson - CV.pdf"></iframe>
+</div>
