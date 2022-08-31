@@ -81,8 +81,8 @@ changefreq: weekly
 
 			<!-- Posts -->
 			<section class="posts">
-				{% for post in site.posts limit:3 %}
-				{% assign mod3 = forloop.index | modulo: 3 %}
+				{% for post in site.posts limit:2 %}
+				{% assign mod3 = forloop.index | modulo: 2 %}
 				<article>
 					<header>
 						<span class="date">{{ post.date | date_to_string }}</span>
