@@ -3827,16 +3827,6 @@ body.is-loading #intro:not(.hidden)+#header+#nav {
     text-align: center
 }
 
-#oddpostcap {
-    display: table;
-    overflow: hidden;
-}
-
-#oddpostcap>header {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 #main>.posts>article>:last-child {
     margin-bottom: 0
 }
