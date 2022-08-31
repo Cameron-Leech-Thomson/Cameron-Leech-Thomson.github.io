@@ -3827,6 +3827,10 @@ body.is-loading #intro:not(.hidden)+#header+#nav {
     text-align: center
 }
 
+#main>.posts>#oddpostcap {
+    text-align: center;
+}
+
 #main>.posts>article>:last-child {
     margin-bottom: 0
 }
