@@ -6,7 +6,7 @@ excerpt: "A brief summary on the way this site was made."
 image: "/images/GitHubPages.jpg"
 caption: "GitHub Pages"
 credit: "https://pages.github.com/"
-alt: "Screenshot from the GitHub Pages webpage. A computer and phone screen with the same site in different styles to fit each screensize. The text reads "GitHub Pages. Websites for you and your projects. Hosted directly from your GitHub repository. Just edit, push and your changes are live. Jekyll - Transform your plain text into static websites and blogs."."
+alt: "Screenshot from the GitHub Pages webpage. A computer and phone screen with the same site in different styles to fit each screensize. The text reads &#8220;GitHub Pages. Websites for you and your projects. Hosted directly from your GitHub repository. Just edit, push and your changes are live. Jekyll - Transform your plain text into static websites and blogs.&#8221;."
 ---
 
 ## This Site
