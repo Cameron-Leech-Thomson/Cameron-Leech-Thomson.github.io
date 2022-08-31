@@ -6,6 +6,7 @@ excerpt: "A brief summary on the way this site was made."
 image: "/images/GitHubPages.jpg"
 caption: "GitHub Pages"
 credit: "https://pages.github.com/"
+alt: "Screenshot from the GitHub Pages webpage. A computer and phone screen with the same site in different styles to fit each screensize. The text reads "GitHub Pages. Websites for you and your projects. Hosted directly from your GitHub repository. Just edit, push and your changes are live. Jekyll - Transform your plain text into static websites and blogs."."
 ---
 
 ## This Site
@@ -16,12 +17,13 @@ Content for each page is inside of a file containing a mark-up language. For exa
 ```markdown
     ---
     layout: post
-    title: "Welcome to My Site!"
+    title:  "Welcome to My Site!"
     date:   2020-10-21
     excerpt: "This is the first post on my shiny new portfolio site!"
     image: "/images/post1.jpg"
     caption: "Photo by Ilya Pavlov on Unsplash"
     credit: "https://unsplash.com/photos/OqtafYT5kTw?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+    alt: "Computer monitor showing HTML code, with some sections of PHP & JavaScript."
     ---
 ```
 The attributes here are accessed in a HTML file, and then used to fill the slots for various pieces of content. The main bulk of writing done in a post is done after the `---`.
