@@ -3827,12 +3827,12 @@ body.is-loading #intro:not(.hidden)+#header+#nav {
     text-align: center
 }
 
-#main>.posts>article#oddpostcap {
+#oddpostcap {
     display: table;
     overflow: hidden;
 }
 
-#main>.posts>article#oddpostcap>header {
+#oddpostcap>header {
     display: table-cell;
     vertical-align: middle;
 }
