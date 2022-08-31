@@ -6,87 +6,97 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-    {% include head.html %}
 
-	</head>
-	<body class="is-loading">
+<head>
+	{% include head.html %}
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+</head>
 
-				<!-- Header -->
-				<header id="header">
-					<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
+<body class="is-loading">
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="{{ " /" | absolute_url }}" class="logo">{{site.title}}</a>
+		</header>
+
+
+		<!-- Nav -->
+		<nav id="nav">
+
+			{% include nav.html %}
+
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<article class="post featured">
+				<header class="major">
+					<h2><a href="#">My Projects</a></h2>
+					<p>Here you can find various posts about my projects; detailing what went into them, why I liked it,
+						or why it was a pain!
+					</p>
 				</header>
-
-
-				<!-- Nav -->
-					<nav id="nav">
-
-            {% include nav.html %}
-						
-					</nav>
-
-				<!-- Main -->
-				<div id="main">
-
-          <article class="post featured">
-            <header class="major">
-              <h2><a href="#">My Projects</a></h2>
-              <p>Here you can find various posts about my projects; detailing what went into them, why I liked it, or why it was a pain!
+				<p>
+					These posts will usually be about a project I've either just started or just finished, including a
+					link to their GitHub repository.
+					The posts will be about the process of designing the project from start to finish, including certain
+					parts that I think are interesting or were difficult to implement.
+					Some parts that were a particular pain will get their own blog post, where I'll be able to talk
+					about why it was so difficult and why I wanted to do it a certain way.
+				<p>
 				</p>
-            </header>
-						<p>
-							These posts will usually be about a project I've either just started or just finished, including a link to their GitHub repository.
-							The posts will be about the process of designing the project from start to finish, including certain parts that I think are interesting or were difficult to implement.
-							Some parts that were a particular pain will get their own blog post, where I'll be able to talk about why it was so difficult and why I wanted to do it a certain way.
-						<p>
-						</p>
-							I'll also provide a slightly more detailed explination of certain parts of the code, explaining why I used it and why I think it is particularly interesting or useful.
-							Enjoy!
-						</p>
+				I'll also provide a slightly more detailed explination of certain parts of the code, explaining why I
+				used it and why I think it is particularly interesting or useful.
+				Enjoy!
+				</p>
 
-          </article>
-					<!-- Post -->
-					<section class="posts">
-						{% for post in site.posts %}
-						{% assign mod3 = forloop.index | modulo: 2 %}
-							<article>
-								<header>
-									<span class="date">{{ post.date | date_to_string }}</span>
-									<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-								</header>
-								<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="{{post.alt}}" /></a>
-								<p>{{ post.excerpt }}</p>
-								<ul class="actions">
-									<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
-								</ul>
-							</article>
-							<!-- No sponsors
+			</article>
+			<!-- Post -->
+			<section class="posts">
+				{% for post in site.posts %}
+				{% assign mod3 = forloop.index | modulo: 3 %}
+				<article>
+					<header>
+						<span class="date">{{ post.date | date_to_string }}</span>
+						<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+					</header>
+					<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
+							alt="{{post.alt}}" /></a>
+					<p>{{ post.excerpt }}</p>
+					<ul class="actions">
+						<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
+					</ul>
+				</article>
+				<!-- No sponsors
 							{% if mod3 == 0 %}
 							<article>
+								
 								<header>
 									<h2><a href="#">Sponsored</a></h2>
 								</header>
-
+								
 							</article>
-						-->
+						
 							{% endif %}
 						{% endfor %}
+						-->
+			</section>
 
-					</section>
+		</div>
 
-					</div>
+		<!-- Footer -->
+		{% include foot.html %}
 
-				<!-- Footer -->
-        {% include foot.html %}
+	</div>
 
-			</div>
+	<!-- Scripts -->
+	{% include scripts-main.html %}
+	{% include tracking.html %}
 
-			<!-- Scripts -->
-			{% include scripts-main.html %}
-			{% include tracking.html %}
+</body>
 
-	</body>
 </html>

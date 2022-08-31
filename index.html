@@ -3,9 +3,9 @@ layout: null
 title: Portfolio of Cameron Leech-Thomson
 description: Splash-page for the Portfolio.
 sitemap:
-    priority: 1.0
-    lastmod: 2017-11-02
-    changefreq: weekly
+priority: 1.0
+lastmod: 2017-11-02
+changefreq: weekly
 ---
 <!DOCTYPE HTML>
 <!--
@@ -15,105 +15,117 @@ sitemap:
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-    {% include head.html %}
+
+<head>
+	{% include head.html %}
 
 
-	</head>
-	<body class="is-loading">
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+<body class="is-loading">
 
-				<!-- Intro -->
-					<div id="intro">
-            <h1>{{site.title}}</h1>
-						<h2>Cameron Leech-Thomson</h2>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
+
+		<!-- Intro -->
+		<div id="intro">
+			<h1>{{site.title}}</h1>
+			<h2>Cameron Leech-Thomson</h2>
+			<ul class="actions">
+				<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+			</ul>
+		</div>
+
+		<!-- Header -->
+		<header id="header">
+			<a href="/" | absolute_url }} class="logo">{{site.title}}</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+
+			{% include nav.html %}
+
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- Featured Post -->
+			<article class="post featured">
+				<header class="major">
+					<h2><a href="#">Welcome to my Portfolio</a></h2>
+					<p>This is a Portfolio site for Cameron Leech-Thomson </p>
+				</header>
+				<div>
+					<img src="/images/me.jpg" alt="Me! (Cameron-Leech-Thomson)"
+						style="height:400px;width:400px;float:right;margin:15px;" />
+					<div id="text" style="text-align: justify;">
+						<p>I'm Cameron, a Computer Science graduate from The University of Sheffield, and this is my
+							portfolio.</p>
+						<p>On this page you can expect to see various projects created throughout my time at University
+							and the projects I make in my own time.
+							You'll also find blog posts detailing the various projects I make and how they came to be.
+							Essentially, it's a little running commentary for me to make on my own projects.</p>
+						<p>You can find the projects by scrolling up and pressing the 'Projects' button. You can see the
+							projects in more detail on my GitHub <a
+								href="https://github.com/Cameron-Leech-Thomson">here</a>.
+							Additionally, individual projects will have their repository linked in the post. If you'd
+							like to tell me why what I did could be better - or why it was completely stupid - please do
+							let my know by scrolling down to the footer where you can send me an email directly, and
+							I'll get back to you as soon as I can.
+							Thanks!
+						</p>
 					</div>
+				</div>
+			</article>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="/" | absolute_url }} class="logo">{{site.title}}</a>
+			<!-- Posts -->
+			<section class="posts">
+				{% for post in site.posts limit:2 %}
+				{% assign mod3 = forloop.index | modulo: 3 %}
+				<article>
+					<header>
+						<span class="date">{{ post.date | date_to_string }}</span>
+						<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
 					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-
-            {% include nav.html %}
-
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="#">Welcome to my Portfolio</a></h2>
-									<p>This is a Portfolio site for Cameron Leech-Thomson </p>
-								</header>
-								<div>
-									<img src="/images/me.jpg" alt="Me! (Cameron-Leech-Thomson)" style="height:400px;width:400px;float:right;margin:15px;" />
-								<div id="text" style="text-align: justify;">
-									<p>I'm Cameron, a Computer Science graduate from The University of Sheffield, and this is my portfolio.</p>
-									<p>On this page you can expect to see various projects created throughout my time at University and the projects I make in my own time.
-									You'll also find blog posts detailing the various projects I make and how they came to be. Essentially, it's a little running commentary for me to make on my own projects.</p>
-									<p>You can find the projects by scrolling up and pressing the 'Projects' button. You can see the projects in more detail on my GitHub <a href = "https://github.com/Cameron-Leech-Thomson">here</a>. 
-									Additionally, individual projects will have their repository linked in the post. If you'd like to tell me why what I did could be better - or why it was completely stupid - please do let my know by scrolling down to the footer where you can send me an email directly, and I'll get back to you as soon as I can.
-									Thanks!
-									</p>
-								</div>
-							</div>
-							</article>
-
-						<!-- Posts -->
-							<section class="posts">
-                {% for post in site.posts limit:2 %}
-                {% assign mod3 = forloop.index | modulo: 2 %}
-  								<article>
-  									<header>
-  										<span class="date">{{ post.date | date_to_string }}</span>
-  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-  									</header>
-  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-  									<p>{{ post.excerpt }}</p>
-  									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
-  									</ul>
-  								</article>
-								<!-- Don't want any sponsored bits:
+					<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
+							alt="" /></a>
+					<p>{{ post.excerpt }}</p>
+					<ul class="actions">
+						<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
+					</ul>
+				</article>
+				<!-- Don't want any sponsored bits:
                   {% if mod3 == 0 %}
-                  <article>
+                  		<article>
   									<header>
   										<h2><a href="#">Sponsored</a></h2>
   									</header>
-
+							
   								</article>
-							-->
                   {% endif %}
                 {% endfor %}
+						-->
+			</section>
 
-							</section>
+			<!-- Footer -->
+			<footer>
+				<ul class="actions">
+					<li><a href="{{ " /blog/" | absolute_url }}" class="button">My Projects</a></li>
+				</ul>
+			</footer>
 
-						<!-- Footer -->
-							<footer>
-                <ul class="actions">
-                  <li><a href="{{ "/blog/" | absolute_url }}" class="button">My Projects</a></li>
-                </ul>
-							</footer>
+		</div>
 
-					</div>
+		<!-- Footer -->
+		{% include foot.html %}
 
-				<!-- Footer -->
-        {% include foot.html %}
+	</div>
 
-			</div>
+	<!-- Scripts -->
+	{% include scripts-main.html %}
+	{% include tracking.html %}
 
-		<!-- Scripts -->
-		{% include scripts-main.html %}
-    {% include tracking.html %}
+</body>
 
-	</body>
 </html>
