@@ -27,7 +27,9 @@ Special Relativity is the theory that describes the way that speed affects mass 
 
 ### Effects on Mass
 
+An object technically has two masses in special relativity. The invariant/rest mass, also known as the Newtonian mass, is unchanging relative to the objects motion. The type of mass we're interested in is relativistic mass, which is the total quantity of energy in the system. You can imagine the rest mass to also be essentially the rest energy. For a particle of finite rest mass, *m<sub>rest</sub>* moving at speed *v* relative to the observer, the relativistic mass *m<sub>rel</sub>* can be calculated by the following equation, where *c* is the speed of light:
 
+\\[ m_{rel} = \frac{m_{rest}}{\sqrt{1 - \frac{v^2}{c^2}}} \\]
 
 ### Length Contractions
 
