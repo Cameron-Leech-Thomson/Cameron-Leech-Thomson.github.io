@@ -30,7 +30,7 @@
 		</nav>
 
 		<!-- Main -->
-		<div id="main" onload="login()">
+		<div id="main">
 			<article class="post featured">
 				<header class="major">
 					<h2><a href="#">My Projects (Admin)</a></h2>
@@ -99,16 +99,6 @@
 	<!-- Scripts -->
 	{% include scripts-main.html %}
 	{% include tracking.html %}
-
-    <script>
-        function login(){
-            let attempt = prompt("The page you're attempting to open is only available to admins. To view it, please type the password.");
-            if (attempt != "{{ site.pw }}"){
-                window.alert("Incorrect Password");
-                window.location.replace("{{ "/blog/" | absolute_url }}");
-            }
-        }
-    </script>
 
 </body>
 
