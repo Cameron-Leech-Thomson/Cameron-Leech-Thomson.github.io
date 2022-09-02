@@ -81,9 +81,13 @@ changefreq: weekly
 
 			<!-- Posts -->
 			<section class="posts">
-				{% for post in site.posts limit:2 %}
-				{% assign mod3 = forloop.index | modulo: 2 %}
+				{% assign limit = 2 %}
+				{% for post in site.posts %}
+					{% if limit == 0 %}
+						{% break %}
+					{% endif %}
 					{% if post.draft == false %}
+						{% assign limit = limit | minus: 1 %}
 						<article>
 							<header>
 								<span class="date">{{ post.date | date_to_string }}</span>
@@ -97,18 +101,6 @@ changefreq: weekly
 							</ul>
 						</article>
 					{% endif %}
-				<!-- Don't want any sponsored bits:
-				{% if mod3 == 0 %}
-				
-                  		<article>
-  									<header>
-  										<h2><a href="#">Sponsored</a></h2>
-  									</header>
-							
-  								</article>
-						
-				{% endif %}
-				-->
 				{% endfor %}
 
 			</section>
