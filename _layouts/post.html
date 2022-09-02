@@ -28,6 +28,16 @@
 
 				<!-- Main -->
 				<div id="main">
+
+          {% if page.draft %}
+            <script>
+              let attempt = prompt("The page you're attempting to open is still in development. To view it, please type the password.");
+              if (attempt != "{{ site.pw }}"){
+                window.location.replace("{{ site.url }}/in-development/");
+              }
+            </script>
+          {% endif %}
+
           <section class="post">
     				<header class="major">
       				<span class="date">{{page.date | date_to_string}}</span>

@@ -59,22 +59,29 @@
 			<!-- Post -->
 			<section class="posts">
 				{% assign mod2 = site.posts.size | modulo: 2 %}
+				{% assign drafts = 1 %}
 				{% for post in site.posts %}
-				
-				<article>
-					<header>
-						<span class="date">{{ post.date | date_to_string }}</span>
-						<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-					</header>
-					<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
-							alt="{{post.alt}}" /></a>
-					<p>{{ post.excerpt }}</p>
-					<ul class="actions">
-						<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
-					</ul>
-				</article>
 
-				{% if mod2 != 0 and forloop.index == (site.posts.size - 1) %}
+					{% if !post.draft %}
+				
+						<article>
+							<header>
+								<span class="date">{{ post.date | date_to_string }}</span>
+								<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+							</header>
+							<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
+									alt="{{post.alt}}" /></a>
+							<p>{{ post.excerpt }}</p>
+							<ul class="actions">
+								<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
+							</ul>
+						</article>
+
+					{% else %}
+						{% drafts += 1 %}
+					{% endif %}
+
+				{% if mod2 != 0 and forloop.index == (site.posts.size - drafts) %}
 				<article style="display: table;overflow: hidden;">
 					<header style="display: table-cell;vertical-align:middle;">
 						<h2>Come back later for more posts!</h2>
