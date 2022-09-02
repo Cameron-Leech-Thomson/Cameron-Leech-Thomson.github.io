@@ -47,12 +47,14 @@
         <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
       </ul>
     </section>
-    <section>
-      <h3>Admin Login</h3>
-      <ul class="actions">
-        <li><a onclick="login()" class="button">Login</a></li>
-      </ul>
-    </section>
+    {% if site.title == "blog" %}
+      <section>
+        <h3>Admin Login</h3>
+        <ul class="actions">
+          <li><a onclick="login()" class="button">Login</a></li>
+        </ul>
+      </section>
+    {% endif %}
     <section>
       <!-- There's nothing meant to be here. It's just aesthetics. -->
     </section>
