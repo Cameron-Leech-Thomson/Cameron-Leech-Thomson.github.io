@@ -7,6 +7,7 @@ image: "/images/post1.jpg"
 caption: "Photo by Ilya Pavlov on Unsplash"
 credit: "https://unsplash.com/photos/OqtafYT5kTw?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
 alt: "Computer monitor showing HTML code, with some sections of PHP & JavaScript."
+draft: false
 ---
 
 ## About Me

@@ -62,7 +62,7 @@
 				{% assign drafts = 1 %}
 				{% for post in site.posts %}
 
-					{% if !post.draft %}
+					{% if post.draft == false %}
 				
 						<article>
 							<header>
