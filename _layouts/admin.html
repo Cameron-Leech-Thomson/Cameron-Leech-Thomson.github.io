@@ -84,7 +84,7 @@
 
 				{% endfor %}
 
-				{% assign fullPosts = site.posts.size | minus: drafts %}
+				{% assign fullPosts = site.posts.size | minus: 1 %}
 				{% assign mod2 = fullPosts | modulo: 2 %}
 
 				{% if mod2 != 0 %}
