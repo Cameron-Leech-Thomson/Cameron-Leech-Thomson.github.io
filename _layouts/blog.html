@@ -78,7 +78,7 @@
 						</article>
 
 					{% else %}
-						{% drafts += 1 %}
+						{% assign drafts = drafts | plus: 1 %}
 						<p>post "{{post.title}}" is a draft</p>
 					{% endif %}
 
