@@ -68,7 +68,11 @@
 						<article>
 							<header>
 								<span class="date">{{ post.date | date_to_string }}</span>
-								<h2><a href="{{ post.url | absolute_url }}">{{ post.title }} {% if post.draft == true %} (DRAFT) {% endif %}</a></h2>
+                                {% if post.draft == true %}
+								    <h2><a href="{{ post.url | absolute_url }}">{{ post.title }} (DRAFT)</a></h2>
+                                {% else %}
+                                    <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+                                {% endif %}
 							</header>
 							<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
 									alt="{{post.alt}}" /></a>
