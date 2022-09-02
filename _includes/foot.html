@@ -1,4 +1,15 @@
 <footer id="footer">
+  <script>
+    function login(){
+      let attempt = prompt("The page you're attempting to open is still in development. To view it, please type the password.");
+      if (attempt != "{{ site.pw }}"){
+        window.location.replace("{{ site.url }}");
+        window.alert("Incorrect password.");
+      } else if (attempt == "{{ site.pw }}"){
+        window.location.replace("{{ site.url }}/admin");
+      }
+    }
+  </script>
   <section>
     <form method="POST" action="https://api.slapform.com/{{site.email}}">
       <div class="field">
@@ -34,6 +45,12 @@
         <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
         <li><a href="https://www.linkedin.com/in/{{site.linkedin}}" class="icon fa-linkedin" rel="nofollow"><span class="label">LinkedIn</span></a></li>
         <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Admin Login</h3>
+      <ul class="actions">
+        <li><a onclick="login()" class="button">Login</a></li>
       </ul>
     </section>
     <section>

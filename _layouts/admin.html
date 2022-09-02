@@ -34,7 +34,7 @@
 
 			<article class="post featured">
 				<header class="major">
-					<h2><a href="#">My Projects</a></h2>
+					<h2><a href="#">My Projects (Admin)</a></h2>
 					<p>Here you can find various posts about my projects; detailing what went into them, why I liked it,
 						or why it was a pain!
 					</p>
@@ -56,15 +56,12 @@
 			</article>
 			<!-- Post -->
 			<section class="posts">
-				{% assign drafts = 0 %}
 				{% for post in site.posts %}
-
-					{% if post.draft == false %}
 				
 						<article>
 							<header>
 								<span class="date">{{ post.date | date_to_string }}</span>
-								<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+								<h2><a href="{{ post.url | absolute_url }}">{{ post.title }} {% if post.draft == true %} (DRAFT) {% endif %}</a></h2>
 							</header>
 							<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
 									alt="{{post.alt}}" /></a>
@@ -72,11 +69,7 @@
 							<ul class="actions">
 								<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
 							</ul>
-						</article>
-
-					{% else %}
-						{% assign drafts = drafts | plus: 1 %}
-					{% endif %}					
+						</article>			
 
 				{% endfor %}
 
