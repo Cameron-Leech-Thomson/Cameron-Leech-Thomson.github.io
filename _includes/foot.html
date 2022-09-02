@@ -6,7 +6,7 @@
         window.location.replace("{{ site.url }}");
         window.alert("Incorrect password.");
       } else if (attempt == "{{ site.pw }}"){
-        window.location.replace("{{ '/cv/' | absolute_url }}");
+        window.location.replace("{{ "/admin/" | absolute_url }}");
       }
     }
   </script>
