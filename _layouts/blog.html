@@ -58,7 +58,6 @@
 			</article>
 			<!-- Post -->
 			<section class="posts">
-				{% assign mod2 = site.posts.size | modulo: 2 %}
 				{% assign drafts = 1 %}
 				{% for post in site.posts %}
 
@@ -79,18 +78,20 @@
 
 					{% else %}
 						{% assign drafts = drafts | plus: 1 %}
-					{% endif %}
-
-					
-						<article style="display: table;overflow: hidden;">
-							<header style="display: table-cell;vertical-align:middle;">
-								<h2>Come back later for more posts!</h2>
-								<p>Drafts: {{drafts}} | size: {{site.posts.size}} | both: {{site.posts.size | minus: drafts}}</p>
-							</header>
-						</article>
-					
+					{% endif %}					
 
 				{% endfor %}
+
+				{% assign fullPosts = site.posts.size | minus: drafts %}
+				{% assign mod2 = fullPosts | modulo: 2 %}
+				
+				{% if mod2 != 0 %}
+					<article style="display: table;overflow: hidden;">
+						<header style="display: table-cell;vertical-align:middle;">
+							<h2>Come back later for more posts!</h2>
+						</header>
+					</article>
+				{% endif %}
 
 			</section>
 
