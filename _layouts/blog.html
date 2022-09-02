@@ -81,7 +81,7 @@
 						{% assign drafts = drafts | plus: 1 %}
 					{% endif %}
 
-				{% if mod2 != 0 and forloop.index == (site.posts.size - drafts) %}
+				{% if mod2 != 0 and forloop.index == (site.posts.size | | minus: drafts) %}
 				<article style="display: table;overflow: hidden;">
 					<header style="display: table-cell;vertical-align:middle;">
 						<h2>Come back later for more posts!</h2>
