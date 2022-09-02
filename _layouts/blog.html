@@ -84,14 +84,15 @@
 
 				{% assign fullPosts = site.posts.size | minus: drafts %}
 				{% assign mod2 = fullPosts | modulo: 2 %}
+
 				
-				{% if mod2 != 0 %}
 					<article style="display: table;overflow: hidden;">
 						<header style="display: table-cell;vertical-align:middle;">
 							<h2>Come back later for more posts!</h2>
+							<p>full posts: {{fullPosts}} | mod2: {{mod2}}</p>
 						</header>
 					</article>
-				{% endif %}
+				
 
 			</section>
 
