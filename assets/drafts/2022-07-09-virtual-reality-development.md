@@ -2,7 +2,7 @@
 layout: post
 title:  "Virtual Reality Development"
 date:   2022-07-09
-excerpt: "Developing for Virtual Reality is a new and interesting challenge, and I've recently had the pleasure of using VR for my undergraduate dissertaion project!"
+excerpt: "Developing for Virtual Reality is a new and interesting challenge, and I've recently had the pleasure of using VR for my undergraduate dissertation project!"
 image: "/images/FinalController2.PNG"
 caption: "Image Taken from the Final Implementation of My Dissertation Project."
 credit: "https://github.com/Cameron-Leech-Thomson/dissertation-project"
