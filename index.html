@@ -83,18 +83,20 @@ changefreq: weekly
 			<section class="posts">
 				{% for post in site.posts limit:2 %}
 				{% assign mod3 = forloop.index | modulo: 2 %}
-				<article>
-					<header>
-						<span class="date">{{ post.date | date_to_string }}</span>
-						<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-					</header>
-					<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
-							alt="" /></a>
-					<p>{{ post.excerpt }}</p>
-					<ul class="actions">
-						<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
-					</ul>
-				</article>
+					{% if post.draft == false %}
+						<article>
+							<header>
+								<span class="date">{{ post.date | date_to_string }}</span>
+								<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+							</header>
+							<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
+									alt="" /></a>
+							<p>{{ post.excerpt }}</p>
+							<ul class="actions">
+								<li><a href="{{ post.url | absolute_url }}" class="button">Read Post</a></li>
+							</ul>
+						</article>
+					{% endif %}
 				<!-- Don't want any sponsored bits:
 				{% if mod3 == 0 %}
 				
