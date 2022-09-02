@@ -5,6 +5,7 @@ description:        "Portfolio of Cameron Leech-Thomson"
 locale:             en_GB
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://cameron-leech-thomson.github.io" # the base hostname & protocol for your site
+pw: 6955
 
 # Comments
 disqus_shortname:   default
