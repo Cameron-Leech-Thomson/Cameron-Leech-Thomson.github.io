@@ -31,6 +31,13 @@
 
 		<!-- Main -->
 		<div id="main">
+            <script>
+                let attempt = prompt("The page you're attempting to open is only available to admins. To view it, please type the password.");
+                if (attempt != "{{ site.pw }}"){
+                    window.alert("Incorrect Password");
+                    window.location.replace("{{ site.url }}/blog");
+                }
+            </script>
 
 			<article class="post featured">
 				<header class="major">
