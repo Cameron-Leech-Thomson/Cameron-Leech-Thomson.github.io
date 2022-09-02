@@ -79,6 +79,7 @@
 
 					{% else %}
 						{% drafts += 1 %}
+						<p>post "{{post.title}}" is a draft</p>
 					{% endif %}
 
 				{% if mod2 != 0 and forloop.index == (site.posts.size - drafts) %}
@@ -103,8 +104,6 @@
 				{% endif %}
 				-->
 				{% endfor %}
-
-				<p>there are {{ drafts }} drafts</p>
 
 			</section>
 
