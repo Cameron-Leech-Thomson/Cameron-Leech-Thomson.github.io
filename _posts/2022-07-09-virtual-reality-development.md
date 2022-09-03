@@ -29,36 +29,36 @@ The plan for the project is to have a realistic simulation of the effects of spe
 To create the player character, I began with the default player rig from the Unity XR Toolkit. The default rig allows you to pick up and put down objects, as well as move around on designated areas. While this is a good start, it needed plenty of work. Originally the player could grab objects from up to 10m away, which was changed to only letting them pick things up that their hands could physically touch. If the player tried to teleport with both hands at the same time, they could cover enormous distances extremely quickly, so I added a script that only lets one teleport reticle be active at a time. I then changed the reticles appearance to how you can see it in the image at the top of the page. To make sure that the user could move and throw objects around comfortably even with limited space, I gave the user the ability to hold down the trigger while holding an item. This would charge up a power bar, launching the object on release. On the release of the trigger, the following method is used:
 
 {% highlight csharp linenos %}
-    public void fire(){
-        if (interactor.isSelectActive){
-            powerBar.gameObject.SetActive(false);
-            // Get the interactable that is currently selected:
-            XRBaseInteractable heldItem = interactor.selectTarget;
-            Rigidbody rb = heldItem.gameObject.GetComponent<Rigidbody>();
-            interactor.allowSelect = false;
-            // Deselect the interactable before launching:
-            try{
-                // Try to deselect the object:
-                interactionManager.SelectExit(interactor, heldItem);
-            } catch(NullReferenceException){
-                // In the case that the user has already let go
-                // and a NullReferenceException is thrown, return the users ability to select:
-                StartCoroutine(resetSelect());
-                return;
-            }
-
-            // Launch the object:
-            rb.AddForce(transform.forward * currentPower, ForceMode.VelocityChange);
-
+public void fire(){
+    if (interactor.isSelectActive){
+        powerBar.gameObject.SetActive(false);
+        // Get the interactable that is currently selected:
+        XRBaseInteractable heldItem = interactor.selectTarget;
+        Rigidbody rb = heldItem.gameObject.GetComponent<Rigidbody>();
+        interactor.allowSelect = false;
+        // Deselect the interactable before launching:
+        try{
+            // Try to deselect the object:
+            interactionManager.SelectExit(interactor, heldItem);
+        } catch(NullReferenceException){
+            // In the case that the user has already let go and a
+            // NullReferenceException is thrown, return the users ability to select:
             StartCoroutine(resetSelect());
-
-            // Reset values:
-            currentPower = 0;
-            heldItem = null;
-            itemSelected(false);
-            holdingToFire(false);
+            return;
         }
+
+        // Launch the object:
+        rb.AddForce(transform.forward * currentPower, ForceMode.VelocityChange);
+
+        StartCoroutine(resetSelect());
+
+        // Reset values:
+        currentPower = 0;
+        heldItem = null;
+        itemSelected(false);
+        holdingToFire(false);
     }
+}
 {% endhighlight %}
 
 ### Special Relativity
