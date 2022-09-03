@@ -41,8 +41,8 @@ To create the player character, I began with the default player rig from the Uni
                 // Try to deselect the object:
                 interactionManager.SelectExit(interactor, heldItem);
             } catch(NullReferenceException){
-                // In the case that the user has already let go and a NullReferenceException is thrown,
-                // return the users ability to select:
+                // In the case that the user has already let go
+                // and a NullReferenceException is thrown, return the users ability to select:
                 StartCoroutine(resetSelect());
                 return;
             }
