@@ -18,7 +18,7 @@ At first I felt a little lost, as development tools for VR are still somewhat sp
 
 ## Special Relativity
 
-Special Relativity is the theory that describes the way that speed affects mass and time, which are most noticible when moving at a significant portion of the speed of light. It came from Albert Einstein's 1905 paper '[On the Electrodynamics of Moving Bodies](https://users.physics.ox.ac.uk/~rtaylor/teaching/specrel.pdf)'. Even if you've never heard of special relativity, you've definitely heard of one of the results of that paper: \\( e = mc^2 \\) - the relation between mass and energy. Throughout my dissertation paper I used the example of a paperclip, and I'll do the same here. To put that equation into perspective, turning a paperclip into pure energy would result in about the same amount of energy being released as 'Little Boy' - the 15 kiloton atomic bomb dropped on Hiroshima during the Second World War. There were four main areas of special relativity that I wanted to focus on, which I'll briefly explain below. They are:
+Special Relativity is the theory that describes the way that speed affects mass and time, which are most noticeable when moving at a significant portion of the speed of light. It came from Albert Einstein's 1905 paper '[On the Electrodynamics of Moving Bodies](https://users.physics.ox.ac.uk/~rtaylor/teaching/specrel.pdf)'. Even if you've never heard of special relativity, you've definitely heard of one of the results of that paper: \\( e = mc^2 \\) - the relation between mass and energy. Throughout my dissertation paper I used the example of a paperclip, and I'll do the same here. To put that equation into perspective, turning a paperclip into pure energy would result in about the same amount of energy being released as 'Little Boy' - the 15 kiloton atomic bomb dropped on Hiroshima during the Second World War. There were four main areas of special relativity that I wanted to focus on, which I'll briefly explain below. They are:
 
 - Effects on Mass
 - Length Contractions
@@ -31,9 +31,18 @@ An object technically has two masses in special relativity. The invariant/rest m
 
 \\[ m_{rel} = \frac{m_{rest}}{\sqrt{1 - \frac{v^2}{c^2}}} \\]
 
+To put this into practice, our paperclip weighs about 1g, but at 99.99% the speed of light, the paperclip would have a relative mass of 70.1g. This doesn't seem like much, but it's still a significant increase.
+
 ### Length Contractions
 
+When an object is in motion, it actually contracts slightly. Obviously we aren't able to see this happen as we do not come into contact with objects that travel such a significant portion of the speed of light, so for us the contractions are only by infinitesimally small amounts. As we increase the speed of an object, it'll start to become more visible. This is called a Lorentz Contraction, or more simply a length contraction. For a more in-depth look at this, you can [follow this link](https://en.wikipedia.org/wiki/Length_contraction). If an individual observes an event at time *t*, and positions *x*, *y*, and *z*, then another observes an event at a different time *t’*, and *x’* position, but the same *y* and *z*. Then the second observer would record values found in the series of equations below, where *γ* is the Lorentz Factor. The Lorentz Factor is seen in the bottom equation, where *v* is the objects velocity, *c* is the speed of light, and *γ* is the Lorentz Factor.
 
+\\[ t' = \gamma(t - \frac{v \cdot x}{c^{2}}), \\]
+\\[ x' = \gamma(x - v \cdot t), \\]
+\\[ y` = y, \\]
+\\[ z` = z \\]
+
+\\[ \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \\]
 
 ### Doppler Shift
 
