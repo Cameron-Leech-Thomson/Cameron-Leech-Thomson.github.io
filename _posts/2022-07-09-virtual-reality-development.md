@@ -39,9 +39,8 @@ When an object is in motion, it actually contracts slightly. Obviously we aren't
 
 \\[ t' = \gamma(t - \frac{v \cdot x}{c^{2}}), \\]
 \\[ x' = \gamma(x - v \cdot t), \\]
-\\[ test \\]
-\\[ y` = y \\]
-\\[ z` = z \\]
+\\[ y' = y, \\]
+\\[ z' = z \\]
 
 \\[ \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \\]
 
