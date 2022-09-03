@@ -61,6 +61,22 @@ public void fire(){
 }
 {% endhighlight %}
 
+While snippet doesn't look like much, I find it quite interesting anyway. The first half of the code is all dedicated to making sure the object is still in the player's hand, if it isn't, the object isn't launched (obviously) and the controller regains the ability to pick up other objects. Once the object has been launched, the ability to select items can't be given back immediately, as the object would just be caught again, so we need the coroutine **resetSelect()**, to give the object some time to get out of the player's hands before granting them the ability to grab again. In another thread, the system simply waits for one second before giving back the ability to grab.
+
+{% highlight csharp %}
+private IEnumerator resetSelect(){
+    yield return new WaitForSeconds(1f);
+   
+    interactor.allowSelect = true;
+}
+{% endhighlight %}
+
+<video class="image right" autoplay muted loop >
+    <source src="videos/Grab_Animation.mp4"  type="video/mp4">
+</video>
+
+After finishing the launch object feature, as well as the rest of the grab mechanics, I moved on to prettying up the hands, by animating them. This took an extremely long time, as I had to animate each individual joint, frame by frame, for a full hand opening/closing animation. Moving 14 joints per frame, and moving them into convincing positions for each frame was pretty painful! There was also plenty of coding to sync the animations with the user's button presses, but that's not very interesting. You can see the result in the video.
+
 ### Special Relativity
 
 
