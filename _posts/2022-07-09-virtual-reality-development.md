@@ -35,7 +35,7 @@ To put this into practice, our paperclip weighs about 1g, but at 99.99% the spee
 
 ### Length Contractions
 
-When an object is in motion, it actually contracts slightly. Obviously we aren't able to see this happen as we do not come into contact with objects that travel such a significant portion of the speed of light, so for us the contractions are only by infinitesimally small amounts. As we increase the speed of an object, it'll start to become more visible. This is called a Lorentz Contraction, or more simply a length contraction. For a more in-depth look at this, you can [follow this link](https://en.wikipedia.org/wiki/Length_contraction). If an individual observes an event at time *t*, and positions *x*, *y*, and *z*, then another observes an event at a different time *t’*, and *x’* position, but the same *y* and *z*. Then the second observer would record values found in the series of equations below, where *γ* is the Lorentz Factor. The Lorentz Factor is seen in the bottom equation, where *v* is the objects velocity, *c* is the speed of light, and *γ* is the Lorentz Factor.
+When an object is in motion, it actually contracts slightly in the direction of movement. Obviously we aren't able to see this happen as we do not come into contact with objects that travel such a significant portion of the speed of light, so for us the contractions are only by infinitesimally small amounts. As we increase the speed of an object, it'll start to become more visible. This is called a Lorentz Contraction, or more simply a length contraction. For a more in-depth look at this, you can [follow this link](https://en.wikipedia.org/wiki/Length_contraction). If an individual observes an event at time *t*, and positions *x*, *y*, and *z*, then another observes an event at a different time *t’*, and *x’* position, but the same *y* and *z*. Then the second observer would record values found in the series of equations below, where *γ* is the Lorentz Factor. The Lorentz Factor (*γ*) is seen in the bottom equation, where *v* is the objects velocity, and *c* is the speed of light.
 
 \\[ t' = \gamma(t - \frac{v \cdot x}{c^{2}}), \\]
 \\[ x' = \gamma(x - v \cdot t), \\]
@@ -43,6 +43,10 @@ When an object is in motion, it actually contracts slightly. Obviously we aren't
 \\[ z' = z \\]
 
 \\[ \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \\]
+
+The equations are not limited to just *x*, you could do the same operation to any of the three axes. If an object was travelling in a direction at 0.14c (95,000,000mph), the observed length would be 99% of the rest length. At 0.99c, the object would have contracted to 44% of its original length. To find the length of an object while in motion, you can use the following equation, where *L* is the observed length, *L<sub>0</sub>* is the rest length, *v* is the velocity, and *c* is the speed of light:
+
+\\[ L = L_{0} \cdot \sqrt{1-\frac{v^{2}}{c^{2}}} \\]
 
 ### Doppler Shift
 
