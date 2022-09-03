@@ -40,8 +40,10 @@ The equations are not limited to just *x*, you could do the same operation to an
 
 ## Doppler Shift
 
+Doppler Shift is the bunching and stretching of electromagnetic radiation as it travels from a source to an observer. This is due to the speed that the object is travelling, either towards or away from the observer. When applied to visible light, this is what causes red shift and blue shift, and when applied to sound, this is what causes sirens to seemingly change the way they sound as the source passes by you. As an object travels away from us, the light waves that allow us to see it become stretched, resulting in a longer wavelength of light. Red has the longest wavelength of the visible spectrum, meaning that the light waves tend to gain a red hue. If an object is approaching the observer, the waves will bunch up instead, shortening the wavelengths. Violet and blue both have very short wavelengths, causing the bunched-up waves to appear slightly blue-violet coloured. The observed frequency of a wave *f* can be calculated by the equation below, where *f<sub>0</sub>* is the emitted frequency; *c* is the propagation speed of waves in the medium; *v<sub>r</sub>* is the speed of the receiver relative to the medium, which is added when moving towards the source, or subtracted otherwise; and *v<sub>s</sub>* is the speed of the source, which is added when moving away from the receiver, and subtracted otherwise:
 
+\\[ f = \frac{c \pm v_{r}}{c \pm v_{s}} \\]
 
-### Gravity
+## Gravity
 
-
+Gravity obviously isn't a relativistic effect, but there can be a lot done with it. As I'm sure you can imagine, they are all related to the speed at which an object falls. The force exerted by an object onto the body it resides on - i.e. the force you exert against Earth, and the force that the Earth exerts back at you to keep you from flying off into space - is the weight of an object, calculated with the classic \\( f = m \cdot a \\). Where *f* is the force exerted by the object in a direction, *m* is the object's mass, and *a* is the acceleration the object is experiencing. The force you exert on Earth will be your mass, multiplied by 9.81m/s<sup>2</sup>. If we were to change the strength of gravity, this would cause the force exerted by all objects to change, making them 'weigh' more or less, and fall faster or slower. In the context of the project I'm making, this could be quite fun to play with.
