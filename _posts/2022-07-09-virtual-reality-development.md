@@ -83,7 +83,7 @@ After finishing the launch object feature, as well as the rest of the grab mecha
 
 Unity's default physics were replaced with my own [**PhysicsController**](https://github.com/Cameron-Leech-Thomson/dissertation-project/tree/main/VR%20App/Assets/Scripts/PhysicsController.cs), as I needed to change the sizes, masses, and forces acting upon them in different ways. During the **FixedUpdate()** function - which is most useful for computing physics options - the values for gravity, Doppler shift, and the speed of light are taken from the menu where the user can change them, and are used to calculate the effects of all physics objects. Each physics object has a script that saves its values at rest, so they can be used in the functions to calculate their relativistic counterparts. First, the object's [**RigidBody**](https://docs.unity3d.com/ScriptReference/Rigidbody.html) is used to apply gravity's downward force, scaling with the different values that the user can set it to (0-25m/s<sup>2</sup>). 
 <figure>
-    <div class="image right"style="max-width: 25%">
+    <div class="image right" style="max-width: 25%">
         <img src="{{site.url}}/images/StationaryObject.PNG" alt="A large black cube on a red stand in a white room."/>
         <figcaption>A stationary cube with lengths of 0.75m.</figcaption>
     </div>
