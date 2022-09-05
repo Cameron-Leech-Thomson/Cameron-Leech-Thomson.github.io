@@ -6,6 +6,7 @@ let vids;
 
 document.onload = function(){
     vids = document.getElementsByTagName("video");
+    setInterval(checkPageFocus, 5000);
 }
 
 function checkPageFocus(){
@@ -19,5 +20,3 @@ function checkPageFocus(){
         }
     }
 }
-
-setInterval(checkPageFocus, 5000);
