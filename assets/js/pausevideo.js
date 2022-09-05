@@ -6,6 +6,7 @@ let vids;
 
 document.onload = function(){
     vids = document.getElementsByTagName("video");
+    console.log("got videos: " + vids);
     setInterval(checkPageFocus, 5000);
 
     document.onfocus = function(){
@@ -17,6 +18,7 @@ document.onload = function(){
 }
 
 function checkPageFocus(){
+    console.log("Checking focus..." + document.hasFocus());
     if (!document.hasFocus()){
         console.log("Focus lost, pausing videos.");
         for (var vid of vids){
