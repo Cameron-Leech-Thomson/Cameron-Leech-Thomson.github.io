@@ -9,12 +9,16 @@ document.onload = function(){
     setInterval(checkPageFocus, 5000);
 }
 
+document.onfocus = function(){
+    console.log("Focus regained, playing videos.");
+    for (var vid of vids){
+        vid.play();
+    }
+}
+
 function checkPageFocus(){
-    if (document.hasFocus()){
-        for (var vid of vids){
-            vid.play();
-        }
-    } else{
+    if (!document.hasFocus()){
+        console.log("Focus lost, pausing videos.");
         for (var vid of vids){
             vid.pause();
         }
