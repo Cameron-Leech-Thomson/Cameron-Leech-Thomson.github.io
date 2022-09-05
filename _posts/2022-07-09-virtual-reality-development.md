@@ -88,14 +88,14 @@ Unity's default physics were replaced with my own [**PhysicsController**](https:
         <figcaption>A stationary cube with lengths of 0.75m.</figcaption>
     </div>
 </figure>
-Next, we check of the object is moving, if it is, we apply the changes caused by length contractions and relativistic mass. We simply take the velocity of the object, and it's rest mass, and use it to calculate the relativistic mass. For the calculating the length contractions, we actually cheat a little bit. Rather than scaling the contraction in the direction of movement, we do it in all directions uniformly. This is because during testing it felt very clunky and unpleasant to use, so I changed it.
+Next, we check of the object is moving, if it is, we apply the changes caused by length contractions and relativistic mass. We simply take the velocity of the object, and it's rest mass, and use it to calculate the relativistic mass. For the calculating the length contractions, we actually cheat a little bit. Rather than scaling the contraction in the direction of movement, we do it in all directions uniformly. This is because during testing it felt very clunky and unpleasant to use, so I changed it. Few changes are needed to have the objects contract in their direction of movement. 
 <figure>
     <div class="image right" style="max-width: 25%">
         <img src="{{site.url}}/images/ObjectInMotion.PNG" alt="A small black cube flying through the air in-front of a glass door."/>    
         <figcaption>The cube in motion, where the speed of light is 5m/s. The object’s relative side length is ~0.25m.</figcaption>
     </div>
 </figure>
-Very little needs to be changed to cause the objects to contract in their direction of movement. The calculation of the length contractions actually has a minimum cap of 1/3 of the object's original size, as if it were any smaller, it would be very difficult to keep track of the object sometimes. 
+The calculation of the length contractions actually has a minimum cap of 1/3 of the object's original size, as if it were any smaller, it would be very difficult to keep track of the object sometimes. 
 
 ### Levels
 
