@@ -7,12 +7,12 @@ let vids;
 document.onload = function(){
     vids = document.getElementsByTagName("video");
     setInterval(checkPageFocus, 5000);
-}
 
-document.onfocus = function(){
-    console.log("Focus regained, playing videos.");
-    for (var vid of vids){
-        vid.play();
+    document.onfocus = function(){
+        console.log("Focus regained, playing videos.");
+        for (var vid of vids){
+            vid.play();
+        }
     }
 }
 
