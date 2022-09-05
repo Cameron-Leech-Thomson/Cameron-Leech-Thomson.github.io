@@ -82,12 +82,8 @@ After finishing the launch object feature, as well as the rest of the grab mecha
 ### Special Relativity
 
 Unity's default physics were replaced with my own **PhysicsController.cs**, as I needed to change the sizes, masses, and forces acting upon them in different ways. During the **FixedUpdate()** function - which is most useful for computing physics options - the values for gravity, Doppler shift, and the speed of light are taken from the menu where the user can change them, and are used to calculate the effects of all physics objects. Each physics object has a script that saves its values at rest, so they can be used in the functions to calculate their relativistic counterparts. First, the object's [**RigidBody**](https://docs.unity3d.com/ScriptReference/Rigidbody.html) is used to apply gravity's downward force, scaling with the different values that there user can set it to (0-25m/s<sup>2</sup>).
-<figure>
-    <img src="{{site.url}}/images/StationaryObject.PNG" class="image right" alt="A large black cube on a red stand in a white room."/>
-    <figcaption>A stationary cube with lengths of 0.75m.</figcaption>
-    <img src="{{site.url}}/images/ObjectInMotion.PNG" class="image right" alt="A small black cube flying through the air in-front of a glass door."/>
-    <figcaption>The same cube in motion, with a reduced speed of light of 5m/s. The object’s relative side length is approximately 0.25m.</figcaption>
-</figure>
+<img src="{{site.url}}/images/StationaryObject.PNG" class="image right" alt="A large black cube on a red stand in a white room." caption="A stationary cube with lengths of 0.75m."/>
+<img src="{{site.url}}/images/ObjectInMotion.PNG" class="image right" alt="A small black cube flying through the air in-front of a glass door." caption="The same cube in motion, with a reduced speed of light of 5m/s. The object’s relative side length is approximately 0.25m."/>
 Next, we check of the object is moving, if it is, we apply the changes caused by length contractions and relativistic mass. We simply take the velocity of the object, and it's rest mass, and use it to calculate the relativistic mass. For the calculating the length contractions, we actually cheat a little bit. Rather than scaling the contraction in the direction of movement, we do it in all directions uniformly. This is because during testing it felt very clunky and unpleasant to use, so I changed it. Very little needs to be changed to cause the objects to contract in their direction of movement. The calculation of the length contractions actually has a minimum cap of 1/3 of the object's original size, as if it were any smaller, it would be very difficult to keep track of the object sometimes. 
 
 ### Levels
