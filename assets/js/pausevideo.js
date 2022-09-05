@@ -4,7 +4,7 @@
 
 let vids;
 
-document.onload = function(){
+document.getElementById("post").onload = function(){
     vids = document.getElementsByTagName("video");
     console.log("got videos: " + vids);
     setInterval(checkPageFocus, 5000);
