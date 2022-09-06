@@ -81,11 +81,49 @@ After finishing the launch object feature, as well as the rest of the grab mecha
 
 ### Special Relativity
 
+Unity's default physics were replaced with my own [**PhysicsController**](https://github.com/Cameron-Leech-Thomson/dissertation-project/tree/main/VR%20App/Assets/Scripts/PhysicsController.cs), as I needed to change the sizes, masses, and forces acting upon them in different ways. During the **FixedUpdate()** function - which is most useful for computing physics options - the values for gravity, Doppler shift, and the speed of light are taken from the menu where the user can change them, and are used to calculate the effects of all physics objects. Each physics object has a script that saves its values at rest, so they can be used in the functions to calculate their relativistic counterparts. First, the object's [**RigidBody**](https://docs.unity3d.com/ScriptReference/Rigidbody.html) is used to apply gravity's downward force, scaling with the different values that the user can set it to (0-25m/s<sup>2</sup>).
 <video class="image right" autoplay muted loop >
     <source src="{{site.url}}/videos/LengthContraction.mp4"  type="video/mp4">
 </video>
+Next, we check of the object is moving, if it is, we apply the changes caused by length contractions and relativistic mass. We simply take the velocity of the object, and it's rest mass, and use it to calculate the relativistic mass. For the calculating the length contractions, we actually cheat a little bit. Rather than scaling the contraction in the direction of movement, we do it in all directions uniformly. This is because during testing it felt very clunky and unpleasant to use, so I changed it. There are very few changes that need to be made to have the objects contract in their direction of movement. The calculation of the length contractions actually has a minimum cap of 1/3 of the object's original size, as if it were any smaller, it would be very difficult to keep track of the object sometimes.
 
-Unity's default physics were replaced with my own [**PhysicsController**](https://github.com/Cameron-Leech-Thomson/dissertation-project/tree/main/VR%20App/Assets/Scripts/PhysicsController.cs), as I needed to change the sizes, masses, and forces acting upon them in different ways. During the **FixedUpdate()** function - which is most useful for computing physics options - the values for gravity, Doppler shift, and the speed of light are taken from the menu where the user can change them, and are used to calculate the effects of all physics objects. Each physics object has a script that saves its values at rest, so they can be used in the functions to calculate their relativistic counterparts. First, the object's [**RigidBody**](https://docs.unity3d.com/ScriptReference/Rigidbody.html) is used to apply gravity's downward force, scaling with the different values that the user can set it to (0-25m/s<sup>2</sup>). Next, we check of the object is moving, if it is, we apply the changes caused by length contractions and relativistic mass. We simply take the velocity of the object, and it's rest mass, and use it to calculate the relativistic mass. For the calculating the length contractions, we actually cheat a little bit. Rather than scaling the contraction in the direction of movement, we do it in all directions uniformly. This is because during testing it felt very clunky and unpleasant to use, so I changed it. There are very few changes that need to be made to have the objects contract in their direction of movement. The calculation of the length contractions actually has a minimum cap of 1/3 of the object's original size, as if it were any smaller, it would be very difficult to keep track of the object sometimes. 
+The Doppler shift effects were actually pretty difficult to get working. To get the objects to red & blue shift, I had to first check whether or not they were moving towards or away from the player. The way I did this was a pretty crude solution, but it worked nonetheless. The physics object's position is checked against it's position in the previous frame, and if the distance is larger than before, we assume the object is travelling away from us, and apply a red hue to the object's specular component. If the distance is smaller than the previous frame, we assume the opposite, and apply a blue-violet hue. To scale how much each object's colour would change, I was using the HSV colour space rather than RGB, I did this because it's cyclical, so red and blue end up next to each other at the end. Unity's colour selector displayed the colour space as a big circle, meaning that the blue-to-red transition was over the last 120&deg; of the circle. So starting from the midpoint of 300&deg;, there was 60&deg; of red and 60&deg; of blue to use. The speed that the object was going was proportioned into a range of 0-60, and then either added or subtracted from 300 - depending on whether the colour shift should be blue or red. The colour is then applied to the object's hue value in its material. This was the difficult part. I had to get the material and mesh renderers to change the material properties for the objects, and then apply a [**Material Property Block**](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html) to mask the changes onto the existing properties, I also had to have a way to reset them to default when they weren't moving, so each object needed to store a copy of its original shader. After a good few days of tinkering, the methods that actually did the job were as follows:
+
+{% highlight csharp %}
+public void setColour(Color col){
+    if (materialPropertyBlock == null){
+        materialPropertyBlock = new MaterialPropertyBlock();
+    }
+    // Set the colour to the MPB:
+    materialPropertyBlock.SetFloat(specularHighlights, 1f); 
+    materialPropertyBlock.SetColor(specularID, col);
+    float h, s, v = 0;
+    Color.RGBToHSV(materialPropertyBlock.GetColor(specularID), out h, out s, out v);
+    // Apply the propertyBlock to the renderers:
+    foreach(Renderer rend in renderers){
+        rend.SetPropertyBlock(materialPropertyBlock);
+    }
+    colourChanged = true;
+}
+
+public void resetColours(){
+    if (materialPropertyBlock == null){
+        materialPropertyBlock = new MaterialPropertyBlock();
+    }
+    // Set the colour to the MPB:
+    materialPropertyBlock.SetFloat(specularHighlights, 1f); 
+    materialPropertyBlock.SetColor(specularID, defaultSpecular);
+    float h, s, v = 0;
+    Color.RGBToHSV(materialPropertyBlock.GetColor(specularID), out h, out s, out v);
+    foreach(Renderer rend in renderers){
+        // Apply the property to the renderer:
+        rend.SetPropertyBlock(materialPropertyBlock);
+    }
+    colourChanged = false;
+}
+{% endhighlight %}
+
+Which really doesn't seem like a lot compared to some of my other attempts. After the Doppler shift changes, the final part of the **FixedUpdate()** function checks if the object's *aren't* moving, and resets their size, mass, and material properties back to their defaults. This also happens if an object is grabbed by the user.
 
 ### Levels
 
