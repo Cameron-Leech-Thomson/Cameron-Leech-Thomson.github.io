@@ -51,7 +51,11 @@
               <figcaption><a href = "{{page.credit}}">{{page.caption}}</a></figcaption>
               </figure>
             {% endif %}
-            <p onload="setupVids();">{{content}}</p>
+            <p>{{content}}</p>
+            <script>
+              // I am aware this isn't nice.
+              setupVids();
+            </script>
       		</section>
 
 <!-- Disqus comments:
