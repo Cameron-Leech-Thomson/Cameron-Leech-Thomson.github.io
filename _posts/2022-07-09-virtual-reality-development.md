@@ -123,7 +123,7 @@ public void resetColours(){
 }
 {% endhighlight %}
 
-Which really doesn't seem like a lot compared to some of my other attempts. After the Doppler shift changes, the final part of the **FixedUpdate()** function checks if the object's *aren't* moving, and resets their size, mass, and material properties back to their defaults. This also happens if an object is grabbed by the user.
+You can find the rest of this script [here](https://github.com/Cameron-Leech-Thomson/dissertation-project/tree/main/VR%20App/Assets/Scripts/ValuesAtRest.cs) (it's pretty messy). Which really doesn't seem like a lot compared to some of my other attempts. After the Doppler shift changes, the final part of the **FixedUpdate()** function checks if the object's *aren't* moving, and resets their size, mass, and material properties back to their defaults. This also happens if an object is grabbed by the user.
 
 ### Levels
 
