@@ -14,7 +14,7 @@ The 2021/2022 university year was the final year of my undergraduate course at T
 
 ## Contents
 
-There's a hell of a lot to read in this post, so I though this might be useful. Click a heading to immediately jump to it.
+There's a lot to read in this post, so I though this might be useful. Click a section to immediately jump to it.
 - [Where to Start?](#where-to-start)
 - [Overview](#overview)
 - [Design](#design)
