@@ -8,7 +8,7 @@ function setupVids(){
     vids = document.getElementsByTagName("video");
 
     // Only bother checking for focus if there are any videos on the page:
-    if (vids.length < 0){
+    if (vids.length > 0){
         setInterval(checkPageFocus, 5000);
 
         document.onfocus = function(){
