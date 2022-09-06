@@ -131,4 +131,62 @@ You can find the rest of this script [here](https://github.com/Cameron-Leech-Tho
 
 ### Levels
 
+<video class="image right" autoplay muted loop >
+    <source src="{{site.url}}/videos/FloorButton.mp4"  type="video/mp4">
+</video>
+
+After a pretty long time, it came to the point where I had to start making the levels for the game, and stop just using the flat testing area I had been before. This meant I needed to come up with some ways of making use of the mechanics in an interesting way to allow the user to progress. The first idea I came up with was simply a button, that required a certain amount of force to activate, meaning the 2kg box in the room might not be enough to activate the button that requires at least 25N of force, but if you increased the strength of gravity to say, 14m/s<sup>2</sup>, the box would exert 28N of force onto the button, activating it. I thought this was a nice simple way to get the user to start experimenting with the physics to see what they can do with it. The evolution of this would be a button on a wall, that wouldn't be able to be trigger by just an increased gravity. The user would need to reduce the speed of light to cause the object's relativistic mass to increase, and then throw it at the button to activate it. For the floor button, checking that the object is exerting enough force is easy enough, as gravity will be applying a force on it whether it's moving or not. You can see this below:
+
+{% highlight csharp %}
+if (!activated){
+    // Get object that is interacting with the button:
+    GameObject dynObject = collisionInfo.gameObject;
+    // Check if the object colliding with the button is a valid interactable:
+    if (dynObject.GetComponent<XRGrabInteractable>() != null){
+        // Get the rigidbody belonging to the dynamic object:
+        Rigidbody rb = dynObject.GetComponent<Rigidbody>();
+        // Calculate the downward force it is exerting:
+        Vector3 acceleration = dynObject.GetComponent<GetAcceleration>().getAcceleration();
+        float downForce = rb.mass * Mathf.Abs(acceleration.y);
+
+        if (downForce > forceRequired){
+            activated = true;
+            activateButton();
+        }
+    }
+}
+{% endhighlight %}
+
+<video class="image right" autoplay muted loop >
+    <source src="{{site.url}}/videos/WallButton.mp4"  type="video/mp4">
+</video>
+
+However, for the wall button, we can't simply get it's current speed. Once the object hits the button, it's velocity in that direction stops dead, so the button won't activate. This meant I needed to briefly store the object's last velocity and/or acceleration so that the force against the button can be calculated. This is done in the [**GetAcceleration**](https://github.com/Cameron-Leech-Thomson/dissertation-project/tree/main/VR%20App/Assets/Scripts/GetAcceleration.cs) class, which stores the most recent acceleration the object was experiencing before stopping. This is actually also used in the floor button, but only to make it a little smoother when dropping it from a substantial height. We can then use the last acceleration from the object, along with the relativistic mass of the object, to calculate the force being exerted against the button. **GetAcceleration** doesn't work very nicely with the **LaunchObject** function mentioned above. This is because **LaunchObject** applied an instantaneous velocity to the object, meaning Unity doesn't actually count it as having accelerated at all. Due to this, when an object has been launched with this feature, its acceleration is almost always ~0, so the force can't be calculated. To get around this, **GetAcceleration** also stores the last non-zero velocity of the object, allowing us to use that in the calculations instead if needed. You can see this in action here:
+
+{% highlight csharp %}
+if (!activated){
+    // Get object that is interacting with the button:
+    GameObject dynObject = collisionInfo.gameObject;
+
+    // Check if the object colliding with the button is a valid interactable:
+    if (dynObject.GetComponent<XRGrabInteractable>() != null){
+        // Get the rigidbody belonging to the dynamic object:
+        Rigidbody rb = dynObject.GetComponent<Rigidbody>();
+
+        Vector3 acc = dynObject.GetComponent<GetAcceleration>().getAcceleration();
+        Vector3 vel = dynObject.GetComponent<GetAcceleration>().getLastVelocity();
+        
+        float force1 = Mathf.Abs(calculateForce(acc, rb.mass));
+        // Calculate force with velocity in case LaunchObject is used:
+        // Dampen it with a constant because it's a bit unfair if not.
+        float force2 = Mathf.Abs(calculateForce(vel, rb.mass)) * 0.5f;
+
+        if (force1 > forceRequired || force2 > forceRequired){
+            activated = true;
+            activateButton();
+        }                
+    }
+}
+{% endhighlight %}
+
 
