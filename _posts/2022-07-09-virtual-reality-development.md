@@ -167,7 +167,7 @@ if (!activated){
 }
 {% endhighlight %}
 
-<div class="image main">
+<div class="image mid">
     <figure>
         <img src="{{site.url}}/images/FloorButton.PNG" alt="A big red button on a yellow and grey plinth.">
         <figcaption>A floor button</figcaption>
@@ -206,7 +206,7 @@ if (!activated){
 }
 {% endhighlight %}
 
-<div class="image main">
+<div class="image mid">
     <figure>
         <img src="{{site.url}}/images/WallButton.PNG" alt="A big red button on a pale red wall.">
         <figcaption>A wall button.</figcaption>
@@ -280,7 +280,7 @@ void OnTriggerEnter(Collider other) {
 }
 {% endhighlight %}
 
-<div class="image main">
+<div class="image mid">
     <figure>
         <img src="{{site.url}}/images/RedShiftSensor.PNG" alt="A red laser being fired out of a red wireframe in a cone shape against a white background.">
         <figcaption>A red shift sensor.</figcaption>

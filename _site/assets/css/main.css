@@ -2618,6 +2618,20 @@ input[type="radio"]:focus+label:before {
     width: 100%
 }
 
+.image.mid {
+    display: block;
+    margin: 4rem auto;
+    width: 60%;
+}
+
+.image.mid:first-child {
+    margin-top: 0;
+}
+
+.image.mid img {
+    width: 100%;
+}
+
 .image.main {
     display: block;
     margin: 4rem 0;
