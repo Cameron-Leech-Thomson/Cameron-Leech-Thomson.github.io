@@ -9,6 +9,7 @@
         "Rigidbody",
         "somiibo",
         "thumbsticks",
-        "travelling"
+        "travelling",
+        "wireframe"
     ]
 }

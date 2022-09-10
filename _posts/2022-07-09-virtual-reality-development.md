@@ -167,6 +167,13 @@ if (!activated){
 }
 {% endhighlight %}
 
+<div class="image main">
+    <figure>
+        <img src="{{site.url}}/images/FloorButton.PNG" alt="A big red button on a yellow and grey plinth.">
+        <figcaption>A floor button</figcaption>
+    </figure>
+</div>
+
 <video class="image right" autoplay muted loop >
     <source src="{{site.url}}/videos/WallButton.mp4"  type="video/mp4">
 </video>
@@ -199,7 +206,89 @@ if (!activated){
 }
 {% endhighlight %}
 
+<div class="image main">
+    <figure>
+        <img src="{{site.url}}/images/WallButton.PNG" alt="A big red button on a pale red wall.">
+        <figcaption>A wall button.</figcaption>
+    </figure>
+</div>
 
+<div class="image right">
+    <img src="{{site.url}}/images/RedShiftSensor1.PNG" alt="A red laser being fired out of a red wireframe in a cone shape against a white background.">
+</div>
 
+To get the player using Doppler shift, I decided to add a colour sensor, which is essentially just a ray that will detect whether the object is either red shifting or blue shifting. To create the sensor object, I used a [**LineRenderer**](https://docs.unity3d.com/Manual/class-LineRenderer.html) component to create the coloured wireframe. To actually create the shape for the **LineRenderer**, you need to specify each vertex that should be used, to do this, I used made a cone mesh shape with [Pro Builder](https://docs.unity3d.com/Packages/com.unity.probuilder@4.0/manual/index.html), and pulled out its vertices in the script, and supplied them to the **LineRenderer**, you can see this in the snippet below.
+
+{% highlight csharp %}
+IList<Vector3> vertices = mesh.positions;
+Vector3[] positions = new Vector3[vertices.Count];
+for(int i = 0; i < vertices.Count; i++){
+    positions[i] = transform.TransformPoint(vertices[i]);
+}
+
+frameRenderer.positionCount = positions.Length;
+frameRenderer.SetPositions(positions);
+{% endhighlight %}
+
+<video class="image right" autoplay muted loop >
+    <source src="{{site.url}}/videos/DopplerSensor.mp4"  type="video/mp4">
+</video>
+
+The actual sensing of the object's colour shift is done across two classes; [**RenderLaser**](https://github.com/Cameron-Leech-Thomson/dissertation-project/tree/main/VR%20App/Assets/Scripts/RenderLaser.cs) and [**DopplerSensorController**](https://github.com/Cameron-Leech-Thomson/dissertation-project/tree/main/VR%20App/Assets/Scripts/DopplerSensorController.cs). The former is more for aesthetic purposes, whereas the latter is more functional. The **RenderLaser** class takes in the laser's max length (which can be supplied in the Unity editor), and fires a [**Raycast**](https://docs.unity3d.com/ScriptReference/Physics.Raycast.html) straight forward for however long the specified maximum distance is. The **Raycast** checks for any collisions with an object, and will return the position if there is one. The position is then used to render the sensor's laser to stop at the collision point. In **DopplerSensorController**, the object responsible for the collision is recorded, and tested to make sure that it is an actual physics object; and not the player's hand or a wall. The object's material renderers are then pulled from the object, and the specular map of the materials are recorded, each one is queried to check if it should activate the sensor, and will then activate if it should.
+
+{% highlight csharp %}
+void OnTriggerEnter(Collider other) {
+    if (!activated){
+        // Get the component that collided with the beam:
+        GameObject collision = other.gameObject;
+        // Find the interactable component within the object:
+        XRBaseInteractable interactable = collision.GetComponentInParent<XRBaseInteractable>();
+        if (interactable != null){
+            // Get the game object:
+            GameObject obj = interactable.gameObject;
+            // Get the renderers in each object:
+            Renderer[] rends = obj.gameObject.GetComponentsInChildren<Renderer>();
+            Color[] colours = new Color[rends.Length];
+            for (int i = 0; i < rends.Length; i++)
+            {
+                // Get the MPB's for each renderer:
+                MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+                rends[i].GetPropertyBlock(mpb);
+                // Get the specular map from the material:
+                colours[i] = mpb.GetColor(specularID);
+
+                float h, s, v = 0;
+                Color.RGBToHSV(colours[i], out h, out s, out v);
+
+                if (colours[i].r > 0.5f && h == 0){
+                    h = 1f;
+                }
+
+                // If the hue is tending to red:
+                if (h > (float)300f / 360f && redShift)
+                {
+                    activate();
+                }
+                else if (h <= (float)300f / 360f && h >= (float)240f / 360f && !redShift)
+                {
+                    // If the hue is tending to blue:
+                    activate();
+                }
+            }
+        }
+    }
+}
+{% endhighlight %}
+
+<div class="image main">
+    <figure>
+        <img src="{{site.url}}/images/RedShiftSensor.PNG" alt="A red laser being fired out of a red wireframe in a cone shape against a white background.">
+        <figcaption>A red shift sensor.</figcaption>
+    </figure>
+    <figure>
+        <img src="{{site.url}}/images/BlueShiftSensor.PNG" alt="A blue laser being fired out of a red wireframe in a cone shape against a white background.">
+        <figcaption>A blue shift sensor.</figcaption>
+    </figure>
+</div>
 
 [*Jump to top*](#title)
