@@ -1,11 +1,13 @@
 .image.mid {
     display: block;
-    margin: 4rem 0;
+    margin: auto;
+    padding-bottom: 1rem;
     width: 50%;
 }
 
 .image.mid figure {
     margin: auto;
+    text-align: center;
 }
 
 .image.mid:first-child {
