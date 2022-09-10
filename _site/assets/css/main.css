@@ -2620,8 +2620,12 @@ input[type="radio"]:focus+label:before {
 
 .image.mid {
     display: block;
-    margin: 4rem auto;
-    width: 60%;
+    margin: 4rem 0;
+    width: 50%;
+}
+
+.image.mid figure {
+    margin: auto;
 }
 
 .image.mid:first-child {
