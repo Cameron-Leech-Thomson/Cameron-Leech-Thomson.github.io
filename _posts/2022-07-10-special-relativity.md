@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Special Relativity (Very Briefly)"
+title:  "Appendix: Special Relativity (Very Briefly)"
 date:   2022-07-10
 excerpt: "A little appendix about the special relativity involved in my dissertation project, explained in the Virtual Reality Development post."
 draft: false
