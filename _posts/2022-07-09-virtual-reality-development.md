@@ -170,7 +170,7 @@ if (!activated){
 <div class="image mid">
     <figure>
         <img src="{{site.url}}/images/FloorButton.PNG" alt="A big red button on a yellow and grey plinth.">
-        <figcaption>A floor button</figcaption>
+        <figcaption>A floor button.</figcaption>
     </figure>
 </div>
 
