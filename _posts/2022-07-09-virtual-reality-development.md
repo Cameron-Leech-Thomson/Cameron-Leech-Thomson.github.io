@@ -213,7 +213,7 @@ if (!activated){
     </figure>
 </div>
 
-<div class="image right">
+<div class="image right" style="max-width: 30%;">
     <img src="{{site.url}}/images/RedShiftSensor1.PNG" alt="A red laser being fired out of a red wireframe in a cone shape against a white background.">
 </div>
 
