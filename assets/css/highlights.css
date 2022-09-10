@@ -1,3 +1,21 @@
+.image.mid {
+    display: block;
+    margin: 4rem 0;
+    width: 50%;
+}
+
+.image.mid figure {
+    margin: auto;
+}
+
+.image.mid:first-child {
+    margin-top: 0;
+}
+
+.image.mid img {
+    width: 100%;
+}
+
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #005319; font-style: italic } /* Comment */
 .highlight .err { color: #a40000; border: 1px solid #ef2929 } /* Error */
