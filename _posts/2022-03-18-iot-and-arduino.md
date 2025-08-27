@@ -21,9 +21,9 @@ The hardware used is mostly the basic Adafruit Simple Robot Car, with a couple o
 
 <table>
     <tr>
-        <th style="text-align: center;"> Top-down View </th>
-        <th style="text-align: center;"> Side View </th>
-        <th style="text-align: center;"> Front View </th>
+        <th style="text-align: center; padding: 0.5rem;"> Top-down View </th>
+        <th style="text-align: center; padding: 0.5rem;"> Side View </th>
+        <th style="text-align: center; padding: 0.5rem;"> Front View </th>
     </tr>
     <tr>
         <td>
