@@ -21,7 +21,7 @@ The hardware used is mostly the basic Adafruit Simple Robot Car, with a couple o
 
 | Top-down View | Side View | Front View |
 |-|-|-|
-| ![Top-down view.](/images/IoTTop.JPG) | ![Side view.](/images/IoTSide.JPG) | ![Front view.](/images/IoTFront.JPG) |
+| [Top-down view.](/images/IoTTop.JPG) | [Side view.](/images/IoTSide.JPG) | [Front view.](/images/IoTFront.JPG) |
 
 ## Project Structure
 
