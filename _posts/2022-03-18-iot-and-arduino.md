@@ -19,10 +19,28 @@ There is a demo video of the robot in action on [my GitHub page](https://github.
 
 The hardware used is mostly the basic Adafruit Simple Robot Car, with a couple of modifications. First, the battery pack that powers the Motor Shield does not also power the ESP32, therefore an extra Lithium-Polymer battery has been added to the top. Its wires have been added to the breadboard, with a switch so that power is not wasted. You can see the result in **the images below**.
 
+<table>
+    <tr>
+        <th style="text-align: center;"> Top-down View </th>
+        <th style="text-align: center;"> Side View </th>
+        <th style="text-align: center;"> Front View </th>
+    </tr>
+    <tr>
+        <td>
+            <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:20%; height:auto;">
+        </td>
+        <td>
+            <img src="/images/IoTSide.JPG" alt="Side view." style="width:20%; height:auto;">
+        </td>
+        <td>
+            <img src="/images/IoTFront.JPG" alt="Front view." style="width:20%; height:auto;">
+        </td>
+    </tr>
+</table>
+
+<!---
 | Top-down View | Side View | Front View |
 |-|-|-|
-| <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:20%; height:auto;"> | <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:20%; height:auto;"> | <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:20%; height:auto;"> |
-<!---
 | ![Top-down view.](/images/IoTTop.JPG) | ![Side view.](/images/IoTSide.JPG) | ![Front view.](/images/IoTFront.JPG) |
 --->
 
