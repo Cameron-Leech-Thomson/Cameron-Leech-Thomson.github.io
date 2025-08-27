@@ -3,7 +3,7 @@ layout: post
 title:  "Arduino and The Internet of Things"
 date:   2022-03-18
 excerpt: "Using the Internet of Things to communicate with an Adafruit Arduino car."
-image: "/images/IoTSide.JPG"
+image: "/images/IoTSideCropped.JPG"
 caption: "Adafruit Arduino Car Used in the Project."
 alt: "Small Arduino car with a circuit board and battery on top."
 draft: false
@@ -27,13 +27,13 @@ The hardware used is mostly the basic Adafruit Simple Robot Car, with a couple o
     </tr>
     <tr>
         <td>
-            <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:20%; height:auto;">
+            <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:75%; height:auto;">
         </td>
         <td>
-            <img src="/images/IoTSide.JPG" alt="Side view." style="width:20%; height:auto;">
+            <img src="/images/IoTSide.JPG" alt="Side view." style="width:75%; height:auto;">
         </td>
         <td>
-            <img src="/images/IoTFront.JPG" alt="Front view." style="width:20%; height:auto;">
+            <img src="/images/IoTFront.JPG" alt="Front view." style="width:75%; height:auto;">
         </td>
     </tr>
 </table>
