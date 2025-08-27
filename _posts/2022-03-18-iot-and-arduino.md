@@ -27,13 +27,13 @@ The hardware used is mostly the basic Adafruit Simple Robot Car, with a couple o
     </tr>
     <tr>
         <td>
-            <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:75%; height:auto;">
+            <img src="/images/IoTTop.JPG" alt="Top-down view." style="width:90%; height:auto; align:center">
         </td>
         <td>
-            <img src="/images/IoTSide.JPG" alt="Side view." style="width:75%; height:auto;">
+            <img src="/images/IoTSide.JPG" alt="Side view." style="width:90%; height:auto; align:center">
         </td>
         <td>
-            <img src="/images/IoTFront.JPG" alt="Front view." style="width:75%; height:auto;">
+            <img src="/images/IoTFront.JPG" alt="Front view." style="width:90%; height:auto; align:center">
         </td>
     </tr>
 </table>
