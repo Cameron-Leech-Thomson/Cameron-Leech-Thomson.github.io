@@ -5,6 +5,7 @@ description: A list of my skills in different languages.
 ---
 
 *Skip to...*{: style="text-align: center;"}
+
 *[C#](#C), [C & Arduino](#c--arduino), [HTML, CSS, & JavaScript](#html-css---javascript), [Java & Kotlin](#java--kotlin), [Python](#python), [Ruby](#ruby)*{: style="text-align: center;"}
 
 # Skills
