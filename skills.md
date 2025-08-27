@@ -4,10 +4,8 @@ title: Skills
 description: A list of my skills in different languages.
 ---
 
-<p style="text-align: center;">
-    *Skip to...*
-    *[C#](#C), [C & Arduino](#c--arduino), [HTML, CSS, & JavaScript](#html-css---javascript), [Java & Kotlin](#java--kotlin), [Python](#python), [Ruby](#ruby)*
-</p>
+*Skip to...*{: style="text-align: center;"}
+*[C#](#C), [C & Arduino](#c--arduino), [HTML, CSS, & JavaScript](#html-css---javascript), [Java & Kotlin](#java--kotlin), [Python](#python), [Ruby](#ruby)*{: style="text-align: center;"}
 
 # Skills
 
