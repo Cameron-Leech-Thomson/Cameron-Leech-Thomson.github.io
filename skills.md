@@ -38,3 +38,4 @@ description: A list of my skills in different languages.
 - **[Online Departmental Bookmarking System](https://github.com/Cameron-Leech-Thomson/Bookmark_System)** (2020) - Created as part of a software development team as a University project. A server-based bookmark system that allows users from multiple departments to save, favourite, share, comment, and rate different bookmarks for sites that would be useful per department and across the whole company. Included a login system with guest login, employee login, and admin login. All with different rights and privileges. Built using Ruby, Sinatra (Ruby Gem), HTML, CSS, JavaScript, SQLite3. 
 
 *[Jump to top](#title)*
+{: style="text-align: center;"}

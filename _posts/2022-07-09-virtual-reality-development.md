@@ -293,4 +293,5 @@ void OnTriggerEnter(Collider other) {
 
 That was a lot of talking, but I found the development interesting, I hope you did too! There's a video of the project in it's entirety, if you'd like to see it you can [click here](https://youtu.be/YaARUzQDh9s). Thanks for reading!
 
-[*Jump to top*](#title)
+*[Jump to top](#title)*
+{: style="text-align: center;"}
