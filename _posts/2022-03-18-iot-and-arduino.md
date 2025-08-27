@@ -54,23 +54,41 @@ In the `LA2/firmware` folder, there is a file called `launch.bat`, this file lau
 
 The actual C++ code inside of the `LA2/ProjectThing` folder starts by using the exercises from the labs to connect to the server, this code is in `Ex09.cpp`. The file `Ex10.cpp` is the actual controller for the robot and contains the methods used to read `instructions.txt` into executable C++. This was heavily modified from the original lab work and made to suit the needs of the Adafruit MotorShield. The added methods are as follows:
 
-- `vector<String> splitString(String string, char delimiter)`
+- ```cpp
+  vector<String> splitString(String string, char delimiter)
+  ```
     - This function takes in a String object and a single character as a delimiter, and splits the String out into a vector of substrings, similar to Python's `string.split(delimiter)`. It does this by iterating over the string to get the number of occurances of the delimiter, and then looping that many times from the previous occurance to the next. After each iteration the `from` occurance is set to the `to` occurance, and the `to` occurance is set to the next occurance by using the `String.indexOf(delimiter, offset)`. Each `from`-`to` pair is added as a substring to the resulting vector, and after iterating over the whole string, the vector is returned.
-- `void doInstruction(String dir, int spd, Motors motor)`
+- ```cpp
+  void doInstruction(String dir, int spd, Motors motor)
+  ```
     - `doInstruction` takes in an individual instruction to be executed on a motor and parses the values to execute the instructions provided. `Motors` is a public enum defined at the top of the file, consisting of two values, **LEFT** and **RIGHT**, this allows the method to decide which motor to pass the instructions to. If the provided value is not "LEFT" or "RIGHT", then it will not execute the current instruction and pass an error message to the serial monitor. Otherwise, it will check whether the instruction is to move forward, backward, or stop, and at what speed, and run the code to do this.
-- `int clampValue(int value, int _min, int _max)`
+- ```cpp
+  int clampValue(int value, int _min, int _max)
+  ```
     - This function takes in an integer value, as well as a minimum and maximum value, and will 'clamp' it between the two values. If the value is within the range of `_min` and `_max`, it will return itself. If the value is larger than `_max`, it will return `_max`, or if it is less than `_min`, it will return `_min`.
-- `vector<String> readCommand(String string)`
+- ```cpp
+  vector<String> readCommand(String string)
+  ```
     - Takes in the command (e.g. "forwards-150"), and turns it into two values of data in a `vector` of type `String`. It splits the string by the '-' delimiter, and adds the direction to the output. If there is no valid direction (by checking `dir.toInt() != 0`), then we assume that only speed is provided, and so we add that same value again so the vector is of length 2. This invalid direction is handled in `doInstruction()` by stopping on an invalid direction input, so it doesn't need to be formatted here. We then also check if there is no valid speed value, and if there isn't, then we use the default value, which is defined at the top of the file. Once both the direction and speed have been processed, they are added to the output vector and returned to `readInstructions()`.
-- `void readInstructions(String instr)`
+- ```cpp
+  void readInstructions(String instr)
+  ```
     - The function notifies the user that an instruction is being processed by outputting to the serial monitor and blinking the onboard LED. The instruction (e.g. "forwards-150 forwards-150 5"), and splits the string into a vector with a space as the delimiter. Similar to `readCommand()`, we check for missing inputs. If the length of the instructions vector is less than 3, we check if the missing value is the duration (by using `.toInt() == 0`). If the only missing value is indeed direction, we add the default value to the vector and continue, otherwise we report the error and continue to the next instruction. Then, the `readCommand()` function is used to convert each command into valid direction and speed values, and then each direction-speed pair is passed to `doInstruction()`. After setting the motors to the provided speed and direction, we wait for the provided duration, before setting both motors back to their **RELEASE** status.
-- `void checkAbort()`
+- ```cpp
+  void checkAbort()
+  ```
     - Reads the serial monitor to check for any user input, if the user has inoutted anything, then check if it is a valid abort message. Any of the following are valid: "stop", "exit", "abort", or "quit". In the case that the user has supplied a valid abort message, we then count down, blinking each time, and then set the ESP to go into deep sleep mode with the line `esp_deep_sleep_start()`.
-- `void requestInstructions()`
+- ```cpp
+  void requestInstructions()
+  ```
     - This function is the root of all of those above. Using `doCloudGet(http, targetFile)`, we attempt to connect to the server and retrieve the file with a name matching `targetFile` - in this case - "instructions.txt". If the request fails, we notify the user of the error, provide the return code, and break out of the function. If the request succeeds, we get the contents of the retrieved file, and compare them to the last executed instructions, if they are the same instructions as before, we don't bother executing them. If not, we execute the new instructions. First we notify the user of new instructions then split the string by a newline character. We then iterate over every line except from the first (as this contains the headers), and run `readInstructions(line)` on each line. After completing the loop, we notify the user that the instructions have been completed, and call `http.end()` to free resources.
-- `void setupRobot()`
+- ```cpp
+  void setupRobot()
+  ```
     - This function sets up the robot and the server connection. It first calls `setupServer()`, which is identical to the setup of `Ex09.cpp`, before attempting to connect to the Motor Shield. After connecting to the Motor Shield, we begin a WiFi connection and try to connect to the network with the provided IP & Port. Upon success, we notify the user, and reset the motors by setting them to their **RELEASE** status. We then request the first set of instructions.
-- `void loopRobot()`
+- ```cpp
+  void loopRobot()
+  ```
     - Every 10000 iterations, we make a request for new instructions. This happens about once every few seconds. On every iteration, we check if the user has aborted code execution, as well as handling the client like in `Ex09.cpp`
 
 ## Supplying Instructions
