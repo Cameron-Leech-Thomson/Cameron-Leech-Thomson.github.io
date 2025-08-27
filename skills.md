@@ -4,6 +4,14 @@ title: Skills
 description: A list of my skills in different languages.
 ---
 
+Jump to a specific language here:
+- [C#](#C)
+- [C & Arduino](#c--arduino)
+- [HTML, CSS, & JavaScript](#html-css---javascript)
+- [Java & Kotlin](#java--kotlin)
+- [Python](#python)
+- [Ruby](#ruby)
+
 # Skills
 
 ## C#
@@ -14,6 +22,10 @@ description: A list of my skills in different languages.
 
 ## C & Arduino
 - **[Over-The-Air Instructions to an Adafruit Robot Car](https://github.com/Cameron-Leech-Thomson/OTA-Robot)** (2022) - A robot car that will connect to the internet to download instructions from a local Python server. The user can update the instructions and the car will detect this and carry them out. The user can issue commands in the format *"LEFTMOTOR-SPEED RIGHTMOTOR-SPEED DURATION(sec)"*.
+
+## HTML, CSS, &  JavaScript
+- **[Blogging Site with Chatrooms & Story Uploads](https://github.com/Cameron-Leech-Thomson/com3504-group-project)** (2022) - A site allowing fictional 'spies' to write up stories of their missions akin to a blog post. Users can join chatrooms and discuss the stories, with the added feature of tagging certain parts of images with the outputs of the Google Knowledge Graph, which is integrated into each chatroom. NodeJS and MongoDB was also used. Created in a team with [Kieran Powell](https://github.com/Kappeh) & [Connor Mitchell](https://github.com/ConnorMitchell).
+- **[Online Departmental Bookmarking System](https://github.com/Cameron-Leech-Thomson/Bookmark_System)** (2020) - Created as part of a software development team as a University project. A server-based bookmark system that allows users from multiple departments to save, favourite, share, comment, and rate different bookmarks for sites that would be useful per department and across the whole company. Included a login system with guest login, employee login, and admin login. All with different rights and privileges. Built using Ruby, Sinatra (Ruby Gem), HTML, CSS, JavaScript, SQLite3. 
 
 ## Java & Kotlin
 - **[Mobile Tourist App](https://github.com/Cameron-Leech-Thomson/COM31007_Group_Assignment)** (2021) - A mobile application made in Kotlin with Android Studio. Provides the user with a map and allows them to upload images and tag them onto the map, so that others can see, allowing users to log their travels in a more interactive manner. Made alongside [Ibrahim Teksoylu](https://github.com/aca19it) and [Mircea-Gelu Egry](https://github.com/MirceaEgry).
@@ -28,8 +40,4 @@ description: A list of my skills in different languages.
 - A series of small, basic projects (~2015) - Projects undertaken by myself to start learning to code. Began with C#, but quickly switched to Python. Most of these projects have been lost and those that remain are too basic to be worth uploading - like I said, it was when I first started coding.
 
 ## Ruby
-- **[Online Departmental Bookmarking System](https://github.com/Cameron-Leech-Thomson/Bookmark_System)** (2020) - Created as part of a software development team as a University project. A server-based bookmark system that allows users from multiple departments to save, favourite, share, comment, and rate different bookmarks for sites that would be useful per department and across the whole company. Included a login system with guest login, employee login, and admin login. All with different rights and privileges. Built using Ruby, Sinatra (Ruby Gem), HTML, CSS, JavaScript, SQLite3. 
-
-## HTML, CSS, JavaScript
-- **[Blogging Site with Chatrooms & Story Uploads](https://github.com/Cameron-Leech-Thomson/com3504-group-project)** (2022) - A site allowing fictional 'spies' to write up stories of their missions akin to a blog post. Users can join chatrooms and discuss the stories, with the added feature of tagging certain parts of images with the outputs of the Google Knowledge Graph, which is integrated into each chatroom. NodeJS and MongoDB was also used. Created in a team with [Kieran Powell](https://github.com/Kappeh) & [Connor Mitchell](https://github.com/ConnorMitchell).
 - **[Online Departmental Bookmarking System](https://github.com/Cameron-Leech-Thomson/Bookmark_System)** (2020) - Created as part of a software development team as a University project. A server-based bookmark system that allows users from multiple departments to save, favourite, share, comment, and rate different bookmarks for sites that would be useful per department and across the whole company. Included a login system with guest login, employee login, and admin login. All with different rights and privileges. Built using Ruby, Sinatra (Ruby Gem), HTML, CSS, JavaScript, SQLite3. 
